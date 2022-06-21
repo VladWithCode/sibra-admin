@@ -19,15 +19,13 @@ function createWindow() {
     },
   });
   mainWindow.loadURL(
-    isDev
-      ? 'http://localhost:3000'
-      : path.join(relativePath, 'build/index.html')
+    isDev ? 'http://localhost:3000' : path.join(relativePath, '../index.html')
   );
   if (isDev) {
     // Open the DevTools.
     //BrowserWindow.addDevToolsExtension('<location to your react chrome extension>');
-    mainWindow.webContents.openDevTools();
   }
+  mainWindow.webContents.openDevTools();
 
   mainWindow.setMenu(null);
   mainWindow.on('closed', () => (mainWindow = null));
