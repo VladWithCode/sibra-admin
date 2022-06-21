@@ -1,0 +1,44 @@
+@import './base/animations';
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './components/addNote';
+@import './components/breadcrumbs';
+@import './components/calendar';
+@import './components/cession';
+@import './components/fileModal';
+@import './components/floating';
+@import './components/floatingBtn';
+@import './components/loading';
+@import './components/lotsList';
+@import './components/lotTypesList';
+@import './components/manzanas';
+@import './components/manzana-lots';
+@import './components/modalConfirm';
+@import './components/nav';
+@import './components/RecordNotes';
+@import './components/RecordSummary';
+@import './components/searchSelect';
+@import './components/QuickRegister';
+@import './components/uiError';
+@import './components/ui-button';
+@import './components/ui-card';
+@import './components/ui-checkitem';
+@import './components/ui-list';
+@import './components/ui-listinput';
+@import './components/ui-placeholder';
+@import './components/ui-screen';
+
+@import './pages/clients';
+@import './pages/createPages';
+@import './pages/createProject';
+@import './pages/lot';
+@import './pages/profile';
+@import './pages/project';
+@import './pages/projects';
+@import './pages/signin';
+@import './pages/stats';
+
+@import './base/base';
+@import './base/typography';
+@import './base/utils';

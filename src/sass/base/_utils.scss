@@ -1,0 +1,15 @@
+.w {
+  &-100p {
+    width: 100%;
+  }
+}
+
+@for $i from 1 through 5 {
+  .row-span__#{$i} {
+    grid-row: span $i;
+  }
+
+  .col-span__#{$i} {
+    grid-column: span $i;
+  }
+}

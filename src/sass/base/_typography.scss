@@ -1,0 +1,21 @@
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
+  &-danger {
+    color: $color-danger !important;
+  }
+
+  &-warning {
+    color: $color-warning !important;
+  }
+
+  &-black {
+    color: $black !important;
+  }
+}

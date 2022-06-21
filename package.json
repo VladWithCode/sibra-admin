@@ -1,0 +1,56 @@
+{
+  "name": "sibra-admin",
+  "author": {
+    "email": "vladwithcode@gmail.com",
+    "name": "Bladimir Rangel"
+  },
+  "description": "Programa para administracion de Sibra",
+  "homepage": "./",
+  "private": true,
+  "version": "0.0.1",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "electron": "^19.0.5",
+    "electron-builder": "^23.1.0",
+    "sass": "^1.52.3",
+    "vite": "^2.9.9"
+  },
+  "build": {
+    "appId": "com.ggmarketing.sibra-admin",
+    "productName": "Sibra",
+    "win": {
+      "target": "nsis",
+      "icon": "build/favicon.ico"
+    },
+    "files": [
+      "build/*",
+      {
+        "from": "build/assets",
+        "to": "assets"
+      },
+      "node_modules/*",
+      "package.json"
+    ],
+    "nsis": {
+      "installerIcon": "build/favicon.ico",
+      "unistallerIcon": "build/favicon.ico",
+      "uninstallDisplayName": "Sibra",
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
