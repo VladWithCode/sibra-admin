@@ -1,0 +1,25 @@
+{
+  "appId": "com.ggmarketing.sibra-admin",
+  "productName": "Sibra",
+  "win": {
+    "target": "nsis",
+    "icon": "build/favicon.ico"
+  },
+  "files": [
+    "build/*",
+    {
+      "from": "build/assets",
+      "to": "assets"
+    },
+    "node_modules/*",
+    "package.json"
+  ],
+  "nsis": {
+    "installerIcon": "build/favicon.ico",
+    "uninstallerIcon": "build/favicon.ico",
+    "uninstallDisplayName": "Sibra",
+    "oneClick": false,
+    "perMachine": true,
+    "allowToChangeInstallationDirectory": true
+  }
+}
