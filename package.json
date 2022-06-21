@@ -7,13 +7,13 @@
   "description": "Programa para administracion de Sibra",
   "private": true,
   "version": "0.0.1",
-  "main": "electron/main.js",
+  "main": "public/electron.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "electron:dev": "electron .",
-    "electron:build": "electron-builder -c.extraMetadata.main=./electron/main.js",
+    "electron:build": "electron-builder -c.extraMetadata.main=./build/electron.js",
     "dist": "yarn build && yarn electron:build"
   },
   "dependencies": {
