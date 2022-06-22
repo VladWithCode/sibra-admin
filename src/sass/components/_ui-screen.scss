@@ -8,15 +8,17 @@
     display: flex;
     align-items: center;
     height: 12rem;
-    padding: 5rem 4rem 0;
-    box-shadow: 0 2px 9px -5px $color-gray-dark;
+    padding: 3rem 4rem 0rem;
+    box-shadow: 0 2px 9px -5px $color-gray-d;
+    background-color: #fff;
   }
 
   &__heading {
+    font-family: $ff-main;
     font-weight: 400;
   }
 
-  &__menu {
+  &__right {
     margin: auto;
     margin-right: 2rem;
   }
