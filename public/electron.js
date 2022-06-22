@@ -60,7 +60,7 @@ function setupLocalFilesNormalizerProxy() {
     'file',
     (request, callback) => {
       const url = request.url.substring(8);
-      callback({ path: path.normalize(`${__dirname}/${url}`) });
+      callback({ path: path.normalize(`${app.getPath()}/${url}`) });
     },
     error => {
       if (error) console.error('Failed to register protocol');
