@@ -6,7 +6,7 @@ function NavLink({ to, children, activeClassName = 'active' }) {
     <Link
       to={to}
       className={({ isActive }) =>
-        'link'.concat(isActive ? activeClassName : '').trim()
+        'link '.concat(isActive ? activeClassName : '').trim()
       }>
       {children}
     </Link>
