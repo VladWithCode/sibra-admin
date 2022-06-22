@@ -13,3 +13,67 @@
     grid-column: span $i;
   }
 }
+
+@for $i from 1 through 5 {
+  $measure: #{$i}rem;
+
+  .m-#{$i} {
+    margin: $measure;
+  }
+
+  .mt-#{$i} {
+    margin-top: $measure;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $measure;
+  }
+
+  .ml-#{$i} {
+    margin-left: $measure;
+  }
+
+  .mr-#{$i} {
+    margin-right: $measure;
+  }
+
+  .my-#{$i} {
+    margin-top: $measure;
+    margin-bottom: $measure;
+  }
+
+  .mx-#{$i} {
+    margin-left: $measure;
+    margin-right: $measure;
+  }
+
+  .p-#{$i} {
+    padding: $measure;
+  }
+
+  .pt-#{$i} {
+    padding-top: $measure;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $measure;
+  }
+
+  .pl-#{$i} {
+    padding-left: $measure;
+  }
+
+  .pr-#{$i} {
+    padding-right: $measure;
+  }
+
+  .py-#{$i} {
+    padding-top: $measure;
+    padding-bottom: $measure;
+  }
+
+  .px-#{$i} {
+    padding-left: $measure;
+    padding-right: $measure;
+  }
+}

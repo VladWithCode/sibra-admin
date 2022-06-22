@@ -19,7 +19,7 @@
 
   &__label {
     display: block;
-    color: $black;
+    color: $color-black;
     font-size: 1.6rem;
     font-weight: 400;
     margin: auto;
@@ -33,12 +33,12 @@
     border: 2px solid transparent;
     border-bottom-color: #8e8e8e;
     font-size: 1.4rem;
-    color: $black;
+    color: $color-black;
     padding: 0.35rem 1rem;
     outline: none;
 
     &:focus {
-      border-bottom-color: $color-ok;
+      border-bottom-color: $color-info;
     }
   }
 }

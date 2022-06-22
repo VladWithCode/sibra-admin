@@ -1,9 +1,15 @@
 .ui-screen {
+  display: block;
+  width: calc(100vw - 5rem);
+  height: 100%;
+  margin-left: auto;
+
   &__header {
     display: flex;
     align-items: center;
-    height: 25vh;
-    padding: 3rem 4rem 2rem;
+    height: 12rem;
+    padding: 5rem 4rem 0;
+    box-shadow: 0 2px 9px -5px $color-gray-dark;
   }
 
   &__heading {
@@ -16,7 +22,14 @@
   }
 
   &__body {
-    margin: 0 auto;
     max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    height: calc(100% - 12rem);
+
+    &.--flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }

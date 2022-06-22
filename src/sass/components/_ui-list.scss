@@ -17,7 +17,7 @@
 
     .item-label {
       flex: 0 1;
-      color: $black;
+      color: $color-black;
 
       & + .item-content {
         text-align: right;
@@ -29,7 +29,7 @@
 
       &--action {
         cursor: pointer;
-        color: $color-ok;
+        color: $color-info;
         font-weight: 600;
       }
     }

@@ -16,10 +16,10 @@
   }
 
   &--edit {
-    background-color: $color-ok;
+    background-color: $color-success;
 
     &:hover {
-      background-color: darken($color-ok, 10%);
+      background-color: darken($color-success, 10%);
     }
   }
 

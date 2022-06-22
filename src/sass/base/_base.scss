@@ -25,34 +25,34 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  color: $color-text;
-  // line-height: 1.2;
-  // font-size: 1.3rem;
-  background-color: $color-bc;
+  font-family: 'Montserrat', sans-serif;
+  color: $color-black;
+  background-color: $color-white;
 
   &::-webkit-scrollbar {
     width: 1rem;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: lighten($color-text-light, 60);
-    border-radius: 4px;
+    background-color: lighten($color-gray, 60);
+    border-radius: $border-radius;
     width: 2rem;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: lighten($color-ok, 20);
+    background-color: lighten($color-info, 20);
     border-radius: 4px;
 
     &:hover {
-      background-color: $color-ok;
+      background-color: $color-info;
     }
   }
 }
 
-html {
-  // width: 100vw;
+html,
+body,
+#root {
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -63,7 +63,7 @@ img {
 button,
 select,
 option {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 input::-webkit-outer-spin-button,
@@ -72,28 +72,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
-}
-
-h1 {
-  font-size: 3.8rem;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2.5rem;
-}
-
-h4 {
-  font-size: 1.4rem;
-}
-
-h5 {
-  font-size: 1.4rem;
 }
 
 p,
@@ -105,41 +85,11 @@ input {
 }
 
 p {
-  color: $black;
+  color: $color-black;
 }
 
 textarea {
-  font-family: "Montserrat", sans-serif;
-}
-
-.btn,
-button {
-  // color: $color-text;
-
-  // font-weight: 200;
-  // max-width: 95%;
-  // border: 1px solid white;
-
-  // transition: .3s all ease-in-out;
-  // text-align: center;
-
-  // &-ghost {
-  //     color: white;
-
-  //     &:hover {
-  //         background-color: white;
-  //         color: black;
-  //     }
-  // }
-  color: $white;
-  font-weight: 400;
-  cursor: pointer;
-  @include transition;
-  border: 1px solid;
-  font-size: 1.5rem;
-  border-radius: 10rem;
-  padding: 1rem 2.5rem;
-  text-transform: capitalize;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sep {
@@ -151,129 +101,13 @@ button {
 
 a {
   text-decoration: none;
-  color: $color-text;
+  color: $color-gray;
   font-size: 16px;
-}
-
-@for $i from 1 through 5 {
-  $measure: #{$i}rem;
-
-  .m-#{$i} {
-    margin: $measure;
-  }
-
-  .mt-#{$i} {
-    margin-top: $measure;
-  }
-
-  .mb-#{$i} {
-    margin-bottom: $measure;
-  }
-
-  .ml-#{$i} {
-    margin-left: $measure;
-  }
-
-  .mr-#{$i} {
-    margin-right: $measure;
-  }
-
-  .my-#{$i} {
-    margin-top: $measure;
-    margin-bottom: $measure;
-  }
-
-  .mx-#{$i} {
-    margin-left: $measure;
-    margin-right: $measure;
-  }
-
-  .p-#{$i} {
-    padding: $measure;
-  }
-
-  .pt-#{$i} {
-    padding-top: $measure;
-  }
-
-  .pb-#{$i} {
-    padding-bottom: $measure;
-  }
-
-  .pl-#{$i} {
-    padding-left: $measure;
-  }
-
-  .pr-#{$i} {
-    padding-right: $measure;
-  }
-
-  .py-#{$i} {
-    padding-top: $measure;
-    padding-bottom: $measure;
-  }
-
-  .px-#{$i} {
-    padding-left: $measure;
-    padding-right: $measure;
-  }
-}
-
-.text-white {
-  color: white;
-
-  & p,
-  a,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: white;
-  }
-}
-
-.app {
-  height: 100vh;
-  width: 100vw;
-  padding: 0 0 3rem 5rem;
-  transition: 0.2s all linear;
-  // overflow: hidden;
-}
-
-.app.minimize {
-  padding: 0 0 0 20rem;
-}
-
-.app-scroll {
-  overflow-y: scroll;
-  height: 90vh;
-  padding: 2rem 3rem 6rem 3rem !important;
-  margin: 2rem auto 30rem auto !important;
-
-  &::-webkit-scrollbar {
-    width: 1rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: lighten($color-text-light, 20);
-    border-radius: 5rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: lighten($color-ok, 10);
-    border-radius: 5rem;
-    @include transition;
-
-    &:hover {
-      background-color: $color-ok;
-    }
-  }
 }
 
 input,
 textarea.styles {
-  color: $color-text-light;
-  font-family: "Montserrat", sans-serif;
+  color: $color-gray;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.7rem;
 }

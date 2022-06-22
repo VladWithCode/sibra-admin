@@ -10,7 +10,7 @@
     svg {
       width: 1.6rem;
       height: 1.6rem;
-      fill: $color-ok;
+      fill: $color-info;
     }
   }
 
@@ -24,7 +24,7 @@
     line-height: 1.4rem;
 
     &.checked {
-      color: $color-ok;
+      color: $color-info;
       text-decoration: line-through;
     }
   }
