@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import SidebarContext from '../../context/Sidebar/SidebarContext';
 import Navigation from '../Navigation/Navigation';
+import Toggler from '../Navigation/Toggler';
 
 function Sidebar() {
-  const { isExpanded } = useContext(SidebarContext);
+  const { isExpanded, toggleIsExpanded } = useContext(SidebarContext);
 
   return (
-    <nav className={isExpanded ? 'expand' : ''}>
+    <nav className={'sidebar'.concat(isExpanded ? ' expand' : '')}>
       <Navigation />
+      <Toggler onClick={() => toggleIsExpanded()} />
     </nav>
   );
 }
