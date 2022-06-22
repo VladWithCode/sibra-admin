@@ -1,10 +1,10 @@
 $color-primary: #14e95f;
-$color-primary-light: #6df89e;
-$color-primary-dark: #13b14a;
+$color-primary-l: #6df89e;
+$color-primary-d: #13b14a;
 
 $color-secondary: #3b437e;
-$color-secondary-light: #656fb9;
-$color-secondary-dark: #263181;
+$color-secondary-l: #656fb9;
+$color-secondary-d: #263181;
 
 $color-success: #14e95f;
 $color-info: #007bce;
@@ -15,10 +15,14 @@ $color-white: #f6f8f8;
 $color-black: #07090e;
 
 $color-gray: #747581;
-$color-gray-light: #c3c4ca;
-$color-gray-dark: #444549;
+$color-gray-l: #c3c4ca;
+$color-gray-d: #4b4b4d;
 
 $border-radius: 8px;
+
+// Font
+$ff-main: 'Montserrat', sans-serif;
+$ff-alt: 'Source Sans Pro', sans-serif;
 
 // Z-index
 $z-below: -1;
