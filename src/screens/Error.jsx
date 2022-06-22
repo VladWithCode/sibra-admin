@@ -1,11 +1,10 @@
 import React from 'react';
+import ScreenHeader from '../components/Screen/ScreenHeader';
 
 function Error() {
   return (
     <div className='ui-screen'>
-      <div className='ui-screen__header'>
-        <h1 className='ui-screen__heading'>Error!</h1>
-      </div>
+      <ScreenHeader heading='Error' />
     </div>
   );
 }
