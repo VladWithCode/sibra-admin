@@ -1,7 +1,12 @@
 import React from 'react';
+import ScreenHeader from '../../components/Screen/ScreenHeader';
 
 function Projects() {
-  return <div className='ui-screen'>Projects</div>;
+  return (
+    <div className='projectpage ui-screen'>
+      <ScreenHeader heading='Proyectos'></ScreenHeader>
+    </div>
+  );
 }
 
 export default Projects;
