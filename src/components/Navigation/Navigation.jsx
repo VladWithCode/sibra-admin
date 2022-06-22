@@ -10,25 +10,25 @@ function Navigation() {
         </svg>
         <span>Inicio</span>
       </NavLink>
-      <NavLink to='/proyectos'>
+      <NavLink to='/projects'>
         <svg>
           <use href='./assets/svg/land.svg#land'></use>
         </svg>
         <span>Proyectos</span>
       </NavLink>
-      <NavLink to='/clientes'>
+      <NavLink to='/customers'>
         <svg>
           <use href='./assets/svg/users.svg#users'></use>
         </svg>
         <span>Clientes</span>
       </NavLink>
-      <NavLink to='/calendario'>
+      <NavLink to='/calendar'>
         <svg>
           <use href='./assets/svg/calendar.svg#calendar'></use>
         </svg>
         <span>Calendario</span>
       </NavLink>
-      <NavLink to='/plantillas'>
+      <NavLink to='/templates'>
         <svg>
           <use href='./assets/svg/file.svg#file'></use>
         </svg>
