@@ -14,7 +14,8 @@
   animation: appear 0.5s;
   animation-fill-mode: backwards;
 
-  svg {
+  svg,
+  .svg {
     aspect-ratio: 1 / 1;
     height: var(--icon-sz, 3rem);
     display: flex;
