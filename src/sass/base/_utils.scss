@@ -1,79 +1,133 @@
-.w {
-  &-100p {
-    width: 100%;
+@for $i from 0 through 6 {
+  .p {
+    &-#{$i} {
+      padding: #{$i}rem !important;
+    }
+
+    &y-#{$i} {
+      padding-top: #{$i}rem !important;
+      padding-bottom: #{$i}rem !important;
+    }
+
+    &x-#{$i} {
+      padding-left: #{$i}rem !important;
+      padding-right: #{$i}rem !important;
+    }
+
+    &l-#{$i} {
+      padding-left: #{$i}rem !important;
+    }
+
+    &r-#{$i} {
+      padding-right: #{$i}rem !important;
+    }
+
+    &b-#{$i} {
+      padding-bottom: #{$i}rem !important;
+    }
+
+    &t-#{$i} {
+      padding-top: #{$i}rem !important;
+    }
+  }
+
+  .m {
+    &-#{$i} {
+      margin: #{$i}rem !important;
+    }
+
+    &y-#{$i} {
+      margin-top: #{$i}rem !important;
+      margin-bottom: #{$i}rem !important;
+    }
+
+    &x-#{$i} {
+      margin-left: #{$i}rem !important;
+      margin-right: #{$i}rem !important;
+    }
+
+    &l-#{$i} {
+      margin-left: #{$i}rem !important;
+    }
+
+    &r-#{$i} {
+      margin-right: #{$i}rem !important;
+    }
+
+    &b-#{$i} {
+      margin-bottom: #{$i}rem !important;
+    }
+
+    &t-#{$i} {
+      margin-top: #{$i}rem !important;
+    }
+
+    &-auto {
+      margin: auto !important;
+    }
+
+    &x-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    &y-auto {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+
+    &r-auto {
+      margin-right: auto !important;
+    }
+
+    &l-auto {
+      margin-left: auto !important;
+    }
+
+    &b-auto {
+      margin-bottom: auto !important;
+    }
+
+    &t-auto {
+      margin-top: auto !important;
+    }
   }
 }
 
-@for $i from 1 through 5 {
-  .row-span__#{$i} {
-    grid-row: span $i;
+.d {
+  &-f {
+    display: flex;
   }
 
-  .col-span__#{$i} {
-    grid-column: span $i;
+  &-b {
+    display: block;
+  }
+
+  &-g {
+    display: grid;
+  }
+
+  &-i {
+    display: inline;
   }
 }
 
-@for $i from 1 through 5 {
-  $measure: #{$i}rem;
-
-  .m-#{$i} {
-    margin: $measure !important;
+.fd {
+  &-col {
+    flex-direction: column;
   }
 
-  .mt-#{$i} {
-    margin-top: $measure !important;
+  &-row {
+    flex-direction: row;
   }
+}
 
-  .mb-#{$i} {
-    margin-bottom: $measure !important;
-  }
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 
-  .ml-#{$i} {
-    margin-left: $measure !important;
-  }
-
-  .mr-#{$i} {
-    margin-right: $measure !important;
-  }
-
-  .my-#{$i} {
-    margin-top: $measure !important;
-    margin-bottom: $measure !important;
-  }
-
-  .mx-#{$i} {
-    margin-left: $measure !important;
-    margin-right: $measure !important;
-  }
-
-  .p-#{$i} {
-    padding: $measure !important;
-  }
-
-  .pt-#{$i} {
-    padding-top: $measure !important;
-  }
-
-  .pb-#{$i} {
-    padding-bottom: $measure !important;
-  }
-
-  .pl-#{$i} {
-    padding-left: $measure !important;
-  }
-
-  .pr-#{$i} {
-    padding-right: $measure !important;
-  }
-
-  .py-#{$i} {
-    padding-top: $measure !important;
-    padding-bottom: $measure !important;
-  }
-
-  .px-#{$i} {
-    padding-left: $measure !important;
-    padding-right: $measure !important;
+  &-h {
+    max-height: 100%;
+    width: auto;
   }
 }
