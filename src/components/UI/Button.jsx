@@ -1,22 +1,14 @@
 import React from 'react';
+import { getClassName } from '../../utils/helpers';
 
-function Button({
-  label,
-  type = 'button',
-  onClick,
-  className,
-  replaceClassName = false,
-  ...props
-}) {
-  const getClassName = () => {
-    return replaceClassName && className
-      ? className
-      : `btn ${className || ''}`.trim();
-  };
-
+function Button({ children, type = 'button', onClick, className, ...props }) {
   return (
-    <button type={type} className={getClassName()} onClick={onClick} {...props}>
-      {label}
+    <button
+      type={type}
+      className={getClassName('btn', className, props.replaceClassName)}
+      onClick={onClick}
+      {...props}>
+      {children}
     </button>
   );
 }
