@@ -1,10 +1,44 @@
 .text {
-  &-center {
-    text-align: center;
+  // Align
+  &-left {
+    text-align: left !important;
   }
 
-  &-capitalize {
-    text-transform: capitalize;
+  &-right {
+    text-align: right !important;
+  }
+
+  &-center {
+    text-align: center !important;
+  }
+
+  // Color
+  &-mute {
+    color: $color-gray-l !important;
+  }
+
+  &-reset-color {
+    color: inherit !important;
+  }
+
+  &-primary {
+    color: $color-primary !important;
+  }
+
+  &-secondary {
+    color: $color-secondary !important;
+  }
+
+  &-black {
+    color: $color-black !important;
+  }
+
+  &-success {
+    color: $color-success !important;
+  }
+
+  &-info {
+    color: $color-info !important;
   }
 
   &-danger {
@@ -14,10 +48,57 @@
   &-warning {
     color: $color-warning !important;
   }
+}
 
-  &-black {
-    color: $color-black !important;
+@for $i from 1 through 6 {
+  .h#{$i} {
+    font-size: 2.4rem * calc(4 / $i) !important;
   }
+
+  .fs-#{$i} {
+    font-size: 2.8rem * calc(2 / $i) !important;
+  }
+}
+
+.fw-200 {
+  font-weight: 200 !important;
+}
+
+.fw-light,
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-regular,
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-bold,
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-xbold,
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.heading {
+  font-size: 3rem;
+  padding-left: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $color-gray-l;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -41,15 +122,14 @@ h5 {
 }
 
 .text-white {
-  color: white;
-
-  & p,
+  &,
+  p,
   a,
   h1,
   h2,
   h3,
   h4,
   h5 {
-    color: white;
+    color: white !important;
   }
 }
