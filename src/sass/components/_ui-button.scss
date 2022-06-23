@@ -93,6 +93,12 @@
     width: 100%;
   }
 
+  &--back {
+    .svg {
+      transform: rotate(-180deg);
+    }
+  }
+
   &.loading {
     opacity: 0.75;
     pointer-events: none;
