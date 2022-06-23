@@ -44,16 +44,15 @@
 }
 
 @mixin shadow {
-  box-shadow: 5px 5px 15px $color-shadow;
+  box-shadow: 5px 5px 15px $color-gray-d;
 }
 
 @mixin shadow-light {
-  box-shadow: -3px -3px 5px -3px $color-shadow-light,
-    5px 5px 5px $color-shadow-light;
+  box-shadow: -3px -3px 5px -3px $color-gray-l, 5px 5px 5px $color-gray-l;
 }
 
 @mixin shadow-nav {
-  box-shadow: 2px 2px 5px $color-shadow;
+  box-shadow: 2px 2px 5px $color-gray;
 }
 
 @mixin transition {
