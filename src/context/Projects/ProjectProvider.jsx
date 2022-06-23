@@ -25,7 +25,7 @@ function ProjectProvider({ children }) {
   };
 
   const setProject = id => {
-    const projectIndex = state.customers.findIndex(c => id === c._id);
+    const projectIndex = state.projects.findIndex(c => id === c._id);
 
     dispatch({ type: SET_PROJECT, payload: projectIndex });
   };
