@@ -1,3 +1,4 @@
+import { safeClone } from '../../utils/helpers';
 import {
   SET_CUSTOMER,
   SET_CUSTOMERS,
@@ -11,16 +12,24 @@ const CustomerReducer = (state, action) => {
 
   switch (type) {
     case SET_CUSTOMERS:
-    case SET_CUSTOMER:
-    case SET_NEW_CUSTOMER:
       return { ...state, customers: payload };
-
+    case SET_CUSTOMER:
+      return { ...state, customer: payload };
+    case SET_NEW_CUSTOMER:
+      return { ...state, newCustomer: payload };
     case SET_CUSTOMER_FIELD:
-      const newState = JSON.parse(JSON.stringify(state));
+      if (state.customer < 0) {
+        console.log('No customer: ' + state.customer);
+        return state;
+      }
 
-      newState.customers[state.customer][payload.field] = payload.value;
+      const customers = safeClone(state.customers);
+      customers[state.customer][payload.field] = payload.value;
 
-      return newState;
+      return {
+        ...state,
+        customers: customers,
+      };
 
     case SET_NEW_CUSTOMER_FIELD:
       return {
