@@ -12,12 +12,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "electron:dev": "electron .",
-    "electron:build": "electron-builder -c.extraMetadata.main=./build/electron.js",
-    "dist": "yarn build && yarn electron:build"
+    "e:dev": "electron .",
+    "e:build": "electron-builder -c.extraMetadata.main=./build/electron.js",
+    "dist": "yarn build && yarn e:build"
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
+    "just-clone": "^6.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"
