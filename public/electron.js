@@ -1,4 +1,4 @@
-const { app, BrowserWindow, protocol } = require('electron');
+const { app, BrowserWindow, protocol, session } = require('electron');
 const path = require('path');
 const url = require('node:url');
 
@@ -8,6 +8,7 @@ function createWindow() {
     height: 768,
     minWidth: 900,
     minHeight: 680,
+    autoHideMenuBar: true,
   });
 
   // In production, set the initial browser path to the local bundle generated
@@ -20,10 +21,11 @@ function createWindow() {
         slashes: true,
       })
     : 'http://localhost:3000';
+
   mainWindow.loadURL(appURL);
 
   if (!app.isPackaged) {
-    mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools({ mode: 'detach' });
   }
 
   mainWindow.webContents.session.webRequest.onBeforeSendHeaders(
@@ -39,6 +41,8 @@ function createWindow() {
 
   mainWindow.webContents.session.webRequest.onHeadersReceived(
     (details, callback) => {
+      if (details.url.includes('fonts.gstatic.com')) return callback(details);
+
       callback({
         responseHeaders: {
           'Access-Control-Allow-Origin': [
@@ -56,22 +60,21 @@ function createWindow() {
 // Setup a local proxy to adjust the paths of requested files when loading
 // them from the local production bundle (e.g.: local fonts, etc...).
 function setupLocalFilesNormalizerProxy() {
-  protocol.registerHttpProtocol(
-    'file',
-    (request, callback) => {
-      const url = request.url.substring(8);
-      callback({ path: path.normalize(`${app.getPath()}/${url}`) });
-    },
-    error => {
-      if (error) console.error('Failed to register protocol');
-    }
-  );
+  protocol.registerHttpProtocol('file', (request, callback) => {
+    const url = request.url.substring(8);
+    callback({ path: path.normalize(`${app.getPath()}/${url}`) });
+  });
 }
 
 // This method will be called when Electron has finished its initialization and
 // is ready to create the browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  await session.defaultSession.loadExtension(
+    path.normalize(
+      'C://Users/Vladwb/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.24.7_0'
+    )
+  );
   createWindow();
   setupLocalFilesNormalizerProxy();
 
