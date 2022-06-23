@@ -1,4 +1,21 @@
 .text {
+  // Transform
+  &-cap {
+    text-transform: capitalize !important;
+  }
+
+  &-upper {
+    text-transform: uppercase !important;
+  }
+
+  &-low {
+    text-transform: lowercase !important;
+  }
+
+  &-none {
+    text-transform: none !important;
+  }
+
   // Align
   &-left {
     text-align: left !important;
