@@ -1,0 +1,45 @@
+.floating-btn {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  background-color: $color-success;
+  color: $color-white;
+  padding: 1.2rem;
+  border-radius: 50%;
+  transition: 0.35s;
+  @include shadow-light;
+  @include animation(0.4s, moveInBottom, 0.3s);
+  z-index: $z-fixed;
+
+  animation: appear 0.5s;
+  animation-fill-mode: backwards;
+
+  svg {
+    aspect-ratio: 1 / 1;
+    height: var(--icon-sz, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: currentColor;
+  }
+
+  &__tooltip {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    width: max-content;
+    top: 50%;
+    left: -6px;
+    padding: 0.5rem 1rem;
+    background-color: $color-black;
+    border-radius: $border-radius;
+    color: $color-white;
+    font-size: 1.15rem;
+    transform: translate(-100%, -50%);
+    transition: opacity 0.35s;
+  }
+
+  &:hover > &__tooltip {
+    opacity: 1;
+  }
+}
