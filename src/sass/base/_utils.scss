@@ -18,62 +18,62 @@
   $measure: #{$i}rem;
 
   .m-#{$i} {
-    margin: $measure;
+    margin: $measure !important;
   }
 
   .mt-#{$i} {
-    margin-top: $measure;
+    margin-top: $measure !important;
   }
 
   .mb-#{$i} {
-    margin-bottom: $measure;
+    margin-bottom: $measure !important;
   }
 
   .ml-#{$i} {
-    margin-left: $measure;
+    margin-left: $measure !important;
   }
 
   .mr-#{$i} {
-    margin-right: $measure;
+    margin-right: $measure !important;
   }
 
   .my-#{$i} {
-    margin-top: $measure;
-    margin-bottom: $measure;
+    margin-top: $measure !important;
+    margin-bottom: $measure !important;
   }
 
   .mx-#{$i} {
-    margin-left: $measure;
-    margin-right: $measure;
+    margin-left: $measure !important;
+    margin-right: $measure !important;
   }
 
   .p-#{$i} {
-    padding: $measure;
+    padding: $measure !important;
   }
 
   .pt-#{$i} {
-    padding-top: $measure;
+    padding-top: $measure !important;
   }
 
   .pb-#{$i} {
-    padding-bottom: $measure;
+    padding-bottom: $measure !important;
   }
 
   .pl-#{$i} {
-    padding-left: $measure;
+    padding-left: $measure !important;
   }
 
   .pr-#{$i} {
-    padding-right: $measure;
+    padding-right: $measure !important;
   }
 
   .py-#{$i} {
-    padding-top: $measure;
-    padding-bottom: $measure;
+    padding-top: $measure !important;
+    padding-bottom: $measure !important;
   }
 
   .px-#{$i} {
-    padding-left: $measure;
-    padding-right: $measure;
+    padding-left: $measure !important;
+    padding-right: $measure !important;
   }
 }
