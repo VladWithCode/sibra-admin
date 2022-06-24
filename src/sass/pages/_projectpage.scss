@@ -12,6 +12,15 @@
   }
 }
 
+.project-details {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 4rem;
+  }
+}
+
 .project-card {
   position: relative;
   overflow: hidden;
