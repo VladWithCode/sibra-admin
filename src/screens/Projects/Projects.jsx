@@ -5,31 +5,25 @@ import ProjectContext from '../../context/Projects/ProjectContext';
 import { useToast } from '../../hooks/useToast';
 import { getProjects } from '../../services/ProjectService';
 import ProjectMenu from '../../components/Projects/ProjectMenu';
+import useProjects from '../../context/Projects/useProjects';
 
 function Projects() {
-  const { projects, setProjects } = useContext(ProjectContext);
-  const { displayErrorToast } = useToast();
-
-  useEffect(() => {
-    const _getProjects = async () => {
-      const { projects, failed, toastMessage } = await getProjects();
-
-      if (failed) return displayErrorToast(toastMessage, true);
-
-      setProjects(projects);
-    };
-
-    if (!projects || projects.length === 0) _getProjects();
-  }, []);
+  const { projects, loading } = useProjects();
 
   return (
     <div className='projectpage ui-screen'>
       <ScreenHeader heading='Proyectos'></ScreenHeader>
-      <div className='projectpage__listing p-3'>
-        {projects.map(p => (
-          <ProjectCard project={p} key={p._id} />
-        ))}
-      </div>
+      {loading ? (
+        <div className='d-f'>
+          <div className='ui-spinner'></div>
+        </div>
+      ) : (
+        <div className='projectpage__listing p-3'>
+          {projects.map(p => (
+            <ProjectCard project={p} key={p._id} />
+          ))}
+        </div>
+      )}
       <ProjectMenu />
     </div>
   );
