@@ -29,6 +29,10 @@
     text-align: center !important;
   }
 
+  &-jus {
+    text-align: justify;
+  }
+
   // Color
   &-mute {
     color: $color-gray-l !important;
@@ -40,14 +44,42 @@
 
   &-primary {
     color: $color-primary !important;
+
+    &-l {
+      color: $color-primary-l !important;
+    }
+
+    &-d {
+      color: $color-primary-d !important;
+    }
   }
 
   &-secondary {
     color: $color-secondary !important;
+
+    &-l {
+      color: $color-secondary-l !important;
+    }
+
+    &-d {
+      color: $color-secondary-d !important;
+    }
   }
 
   &-black {
     color: $color-black !important;
+  }
+
+  &-gray {
+    color: $color-gray !important;
+
+    &-l {
+      color: $color-gray-l !important;
+    }
+
+    &-d {
+      color: $color-gray-d !important;
+    }
   }
 
   &-success {
