@@ -15,7 +15,7 @@ function MainRouter() {
         <Route path='/' element={<App />}>
           <Route index element={<Home />} />
           <Route path='/projects' element={<Projects />} />
-          <Route path='/projects/details/:id' element={<Project />} />
+          <Route path='/projects/details/:pid' element={<Project />} />
           <Route path='/customers' element={<Customers />} />
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/templates' element={<Templates />} />
