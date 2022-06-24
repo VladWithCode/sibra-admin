@@ -5,7 +5,7 @@
   padding: 1.5rem 2rem;
 
   &.--shadow {
-    box-shadow: 0px 2px 9px -5px $color-gray-l;
+    box-shadow: $shadow-base;
   }
 
   &.--bgless {
