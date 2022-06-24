@@ -25,7 +25,10 @@ function NavigationProvider({ children }) {
   const forceReset = name => {
     const safeName = getSafeName(name);
 
-    dispatch({ type: SET_LINK, payload: initialState[safeName] });
+    dispatch({
+      type: SET_LINK,
+      payload: { name: safeName, value: initialState[safeName] },
+    });
   };
 
   return (

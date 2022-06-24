@@ -8,6 +8,7 @@ const NavigationReducer = (state, action) => {
       const { name, value } = payload;
 
       return {
+        ...state,
         [name]: value,
       };
 
