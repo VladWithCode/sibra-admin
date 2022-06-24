@@ -91,37 +91,49 @@
         margin-top: -#{$i}rem !important;
       }
     }
+  }
 
-    &-auto {
-      margin: auto !important;
+  .--gap-#{$i} {
+    gap: #{$i}rem !important;
+
+    &-x-#{$i} {
+      column-gap: #{$i}rem !important;
     }
 
-    &x-auto {
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    &y-auto {
-      margin-top: auto !important;
-      margin-bottom: auto !important;
-    }
-
-    &r-auto {
-      margin-right: auto !important;
-    }
-
-    &l-auto {
-      margin-left: auto !important;
-    }
-
-    &b-auto {
-      margin-bottom: auto !important;
-    }
-
-    &t-auto {
-      margin-top: auto !important;
+    &-y-#{$i} {
+      row-gap: #{$i}rem !important;
     }
   }
+}
+
+.m-auto {
+  margin: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
 }
 
 .d {
@@ -161,3 +173,5 @@
     width: auto;
   }
 }
+
+// Grid
