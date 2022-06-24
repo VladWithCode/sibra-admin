@@ -1,17 +1,17 @@
 .btn {
   font-size: var(--btn-fz, 1.6rem);
-  background-color: $color-gray-d;
-  border: 2px solid $color-gray-d;
+  background-color: transparent;
+  border: 2px solid $color-gray;
   border-radius: $border-radius;
-  color: $color-white;
+  color: $color-gray;
   margin: auto;
   cursor: pointer;
 
   &:hover,
   &:active {
-    color: $color-gray-d;
-    border-color: currentColor;
-    background-color: $color-white;
+    color: $color-white;
+    border-color: $color-gray-d;
+    background-color: $color-gray-d;
   }
 
   &:disabled {
@@ -45,7 +45,7 @@
 
     &:hover,
     &:active {
-      color: $color-gray-d;
+      color: $color-gray-d !important;
     }
   }
 
