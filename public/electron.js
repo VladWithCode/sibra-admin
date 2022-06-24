@@ -9,6 +9,9 @@ function createWindow() {
     minWidth: 900,
     minHeight: 680,
     autoHideMenuBar: true,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
   });
 
   // In production, set the initial browser path to the local bundle generated
@@ -112,3 +115,4 @@ app.on('web-contents-created', (event, contents) => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+require('./listeners/file');
