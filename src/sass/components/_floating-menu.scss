@@ -23,7 +23,7 @@
     // overflow: hidden;
 
     .floating-btn {
-      box-shadow: 1px 1px 8px -1px $color-gray-l;
+      box-shadow: $shadow-base;
 
       &:first-child {
         margin-bottom: 6.4rem;
@@ -43,13 +43,14 @@
       --icon-sz: 3rem;
 
       opacity: 1 !important;
-      transform: rotate(135deg) !important;
+
       box-shadow: none;
       pointer-events: all !important;
       z-index: 2;
 
       > svg {
         width: var(--icon-sz) !important;
+        transform: rotate(135deg) !important;
       }
 
       .floating-btn__tooltip {
@@ -61,7 +62,11 @@
   &.hide > &__toggler {
     > .floating-btn {
       transform: rotate(0deg) !important;
-      @include shadow-light;
+      box-shadow: $shadow-dark !important;
+
+      .svg {
+        transform: rotate(0deg) !important;
+      }
 
       &:hover .floating-btn__tooltip {
         opacity: 1;

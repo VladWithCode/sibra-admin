@@ -21,6 +21,10 @@ $color-gray-d: #252527;
 
 $border-radius: 8px;
 
+// Shadows
+$shadow-base: 0px 2px 9px -5px $color-gray-l;
+$shadow-dark: 3px 3px 9px -6px $color-gray-d;
+
 // Font
 $ff-main: 'Montserrat', sans-serif;
 $ff-alt: 'Source Sans Pro', sans-serif;
