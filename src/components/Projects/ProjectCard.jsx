@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import ProjectContext from '../../context/Projects/ProjectContext';
 import { useNavigate } from 'react-router-dom';
+import NavigationContext from '../../context/Navigation/NavigationContext';
 
 function ProjectCard({ project }) {
   const navigate = useNavigate();
+  const { setLink } = useContext(NavigationContext);
   const { setProject } = useContext(ProjectContext);
   const {
     _id,
@@ -17,8 +19,10 @@ function ProjectCard({ project }) {
   } = project;
 
   const handleCardClick = () => {
+    let link = '/projects/details/' + _id;
     setProject(_id);
-    navigate('/projects/details/' + _id);
+    setLink('projects', link);
+    navigate(link);
   };
 
   return (
