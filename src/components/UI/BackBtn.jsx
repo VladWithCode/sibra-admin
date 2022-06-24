@@ -3,12 +3,12 @@ import FloatingBtn from '../Floating/FloatingBtn';
 import SVG from './SVG';
 import { useNavigate } from 'react-router-dom';
 
-function BackBtn({ onClick }) {
+function BackBtn({ to, onClick }) {
   const navigate = useNavigate();
 
   const _onClick = e => {
     typeof onClick === 'function' && onClick(e);
-    navigate(-1);
+    navigate(typeof to === 'string' ? to : -1);
   };
 
   return (
