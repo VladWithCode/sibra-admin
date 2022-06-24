@@ -174,4 +174,28 @@
   }
 }
 
+// Border Radius
+.--round {
+  border-radius: $border-radius;
+}
+
+.--scroll {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: auto;
+    background-color: $color-gray-l;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-info;
+    border-radius: $border-radius;
+
+    &:hover {
+      background: darken($color-info, 15%);
+    }
+  }
+}
+
 // Grid
