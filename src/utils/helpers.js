@@ -47,7 +47,7 @@ export const makeServerRequest = async (
 };
 
 export const dateToReadableString = date => {
-  if (!date) return '';
+  if (!date || isNaN(Date.parse(date))) return '';
   const safeDate = date instanceof Date ? date : new Date(date);
 
   return new Intl.DateTimeFormat('es-mx', {
