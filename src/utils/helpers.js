@@ -45,3 +45,15 @@ export const makeServerRequest = async (
     return { error: err };
   }
 };
+
+export const dateToReadableString = date => {
+  if (!date) return '';
+  const safeDate = date instanceof Date ? date : new Date(date);
+
+  return new Intl.DateTimeFormat('es-mx', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(safeDate);
+};
