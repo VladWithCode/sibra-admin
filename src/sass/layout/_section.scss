@@ -38,6 +38,14 @@
       &-#{$i} {
         flex: 0 1 calc(25% * (4 / $i));
       }
+
+      &-gap-#{$i} {
+        column-gap: #{$i}rem;
+      }
+    }
+
+    &-auto {
+      flex: 0 0 auto;
     }
   }
 }
