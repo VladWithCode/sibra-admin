@@ -39,22 +39,18 @@
   }
 
   &__toggler {
+    z-index: 2;
+
     > .floating-btn {
       --icon-sz: 3rem;
 
       opacity: 1 !important;
-
-      box-shadow: none;
       pointer-events: all !important;
-      z-index: 2;
 
       > svg {
         width: var(--icon-sz) !important;
         transform: rotate(135deg) !important;
-      }
-
-      .floating-btn__tooltip {
-        opacity: 0;
+        transition: 0.35s;
       }
     }
   }
@@ -67,10 +63,6 @@
       .svg {
         transform: rotate(0deg) !important;
       }
-
-      &:hover .floating-btn__tooltip {
-        opacity: 1;
-      }
     }
   }
 
@@ -80,7 +72,7 @@
     right: initial;
     opacity: 1;
     transform: translateY(0%);
-    transition: opacity 0.65s, transform 0.25s;
+    transition: opacity 0.65s, transform 0.35s;
     z-index: 1;
   }
 

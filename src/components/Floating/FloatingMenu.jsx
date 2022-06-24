@@ -15,8 +15,8 @@ function FloatingMenu({ children, className, ...props }) {
         <FloatingBtn
           onClick={() => setShow(!show)}
           className='projectpage__floating-btn btn--success btn--round p-2'
-          tooltip='Menu'>
-          <svg>
+          tooltip={show ? 'Cerrar' : 'Menu'}>
+          <svg className='svg'>
             <use href='./assets/svg/plus.svg#plus'></use>
           </svg>
         </FloatingBtn>

@@ -9,7 +9,12 @@ function FloatingBtn({ tooltip, className, children, onClick, ...props }) {
       onClick={onClick}
       {...props}>
       {children}
-      {tooltip && <span className='floating-btn__tooltip'>{tooltip}</span>}
+      {tooltip && (
+        <span className='floating-btn__tooltip'>
+          {tooltip}
+          <span className='arrow'></span>
+        </span>
+      )}
     </Button>
   );
 }
