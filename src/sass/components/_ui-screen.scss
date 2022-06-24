@@ -24,10 +24,9 @@
   }
 
   &__body {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 5%;
     height: calc(100% - 12rem);
+    overflow-y: scroll;
 
     &.--flex {
       display: flex;
