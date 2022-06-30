@@ -1,11 +1,12 @@
-const { BrowserWindow, ipcMain } = require('electron');
+const { BrowserWindow, ipcMain, shell } = require('electron');
+const path = require('path');
 
 ipcMain.on('app:open-file', (e, path) => {
-  const win = new BrowserWindow({
-    webPreferences: {
-      nodeIntegration: false,
-    },
-  });
+  shell.openExternal(path);
+});
 
-  win.loadURL(path);
+ipcMain.on('app:browse-template', (e, _p) => {
+  shell.showItemInFolder(
+    '\\\\SIBRA-SERVER\\compartido\\Plantillas de Recibo\\'
+  );
 });
