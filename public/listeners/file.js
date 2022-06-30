@@ -1,5 +1,4 @@
-const { BrowserWindow, ipcMain, shell } = require('electron');
-const path = require('path');
+const { ipcMain, shell } = require('electron');
 
 ipcMain.on('app:open-file', (e, path) => {
   shell.openExternal(path);
