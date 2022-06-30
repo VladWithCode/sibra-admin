@@ -35,8 +35,8 @@ function createWindow() {
     (details, callback) => {
       callback({
         requestHeaders: {
-          Origin: 'http://localhost:3000',
           ...details.requestHeaders,
+          Origin: 'http://localhost:3000',
         },
       });
     }
@@ -48,12 +48,8 @@ function createWindow() {
 
       callback({
         responseHeaders: {
-          'Access-Control-Allow-Origin': [
-            'http://main.sibralan.com',
-            'http://192.168.1.128:3000',
-            'http://localhost:3000',
-          ],
           ...details.responseHeaders,
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
         },
       });
     }
