@@ -30,6 +30,15 @@ function LotsSection({ project }) {
         <div className='col-2 fw-700'>Lotes Entregados</div>
         <div className='col-2 text-right'>{project.deliveredLots}</div>
       </div>
+      <hr className='mb-1' />
+      <div className='section__row'>
+        <div className='col-2 fw-700'>Manzanas</div>
+        <div className='col-2 text-right'>{project.manzanas}</div>
+      </div>
+      <div className='section__row text-primary-d'>
+        <div className='col-2 fw-700'>Areas Verdes (No. Manzana)</div>
+        <div className='col-2 text-right'>{project.greenAreas?.join(', ')}</div>
+      </div>
     </Section>
   );
 }
