@@ -71,7 +71,7 @@ function setupLocalFilesNormalizerProxy() {
 app.whenReady().then(async () => {
   await session.defaultSession.loadExtension(
     path.normalize(
-      'C://Users/Vladwb/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.24.7_0'
+      'C:\\Users\\Vladwb\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.25.0_0'
     )
   );
   createWindow();
