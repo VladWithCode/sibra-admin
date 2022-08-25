@@ -14,8 +14,10 @@ function MainRouter() {
       <Routes>
         <Route path='/' element={<App />}>
           <Route index element={<Home />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/projects/details/:pid' element={<Project />} />
+          <Route path='/projects' element={<Projects />}></Route>
+          <Route path='/project/:pid' element={<Project />}>
+            <Route path='charge/:cid/edit' element={<>hello world</>}></Route>
+          </Route>
           <Route path='/customers' element={<Customers />} />
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/templates' element={<Templates />} />
