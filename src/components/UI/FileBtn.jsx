@@ -11,11 +11,13 @@ function FileBtn({ children, path, className, onClick, ...props }) {
       // Use default logic if not especified otherwise
       if (window.electronAPI) {
         // If on electron use main process to access file
-        const serverPath = String(path)
-          .replace('static', 'public')
-          .replace('/', '\\');
+        const serverPath =
+          FILE_SERVER_URL +
+          String(path).replace('static', 'public').replace('/', '\\');
 
-        electronAPI.openFile(FILE_SERVER_URL + serverPath);
+        electronAPI.openFile(
+          SERVER_URL.includes('localhost') ? SERVER_URL + path : serverPath
+        );
       } else {
         // use regular method otherwise
         window.open(
