@@ -10,7 +10,7 @@ function Section({ className, heading, header, children, ...props }) {
         className={getClassName(
           'section__body',
           `${props.useCard ? 'ui-card' : ''} ${
-            props.cardShadow ? ' --shadow' : ''
+            props.cardShadow ? ' --shadow-dark' : ''
           } ${props.bodyClass || ''}`
         )}>
         {children}
