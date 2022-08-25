@@ -19,7 +19,7 @@ function ProjectCard({ project }) {
   } = project;
 
   const handleCardClick = () => {
-    let link = '/projects/details/' + _id;
+    let link = '/project/' + _id;
     setProject(_id);
     setLink('projects', link);
     navigate(link);
