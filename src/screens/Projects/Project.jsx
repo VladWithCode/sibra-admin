@@ -10,6 +10,7 @@ import DetailsSection from '../../components/Projects/DetailsSection';
 import LotsSection from '../../components/Projects/LotsSection';
 import StatSection from '../../components/Projects/StatSection';
 import FileSection from '../../components/Projects/FileSection';
+import ChargeSection from '../../components/Projects/ChargeSection';
 
 function Project() {
   const { pid } = useParams();
@@ -39,6 +40,7 @@ function Project() {
           <LotsSection project={project} />
           {false && <StatSection project={project} />}
           <FileSection project={project} />
+          <ChargeSection project={project} />
         </div>
       )}
       <BackBtn to='/projects' onClick={() => forceReset('projects')} />
