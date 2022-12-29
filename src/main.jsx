@@ -5,7 +5,8 @@ import ProjectProvider from './context/Projects/ProjectProvider';
 import { SidebarProvider } from './context/Sidebar/SidebarProvider';
 import ToastProvider from './context/Toast/ToastProvider';
 import MainRouter from './routers/MainRouter';
-import './sass/main.scss';
+// import './sass/main.scss';
+import './style.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
