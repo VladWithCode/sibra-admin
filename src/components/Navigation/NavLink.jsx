@@ -24,4 +24,6 @@ function NavLink({
   );
 }
 
+NavLink.displayName = 'CustomLink';
+
 export default NavLink;
