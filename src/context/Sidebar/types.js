@@ -1,1 +1,0 @@
-export const SET_IS_EXPANDED = 'SET_IS_EXPANDED';
