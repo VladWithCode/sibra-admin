@@ -1,11 +1,12 @@
 import React from 'react';
+import Screen from '../../components/Screen/Screen';
 import ScreenHeader from '../../components/Screen/ScreenHeader';
 
 function Records() {
   return (
-    <div className='ui-screen'>
-      <ScreenHeader heading='Expedientes'></ScreenHeader>
-    </div>
+    <Screen>
+      <ScreenHeader heading="Expedientes"></ScreenHeader>
+    </Screen>
   );
 }
 

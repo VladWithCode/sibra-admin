@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { getClassName } from '../../utils/helpers';
+import getClassname from '../../utils/getClassname';
+import SVG from '../UI/SVG';
 import FloatingBtn from './FloatingBtn';
 
 function FloatingMenu({ children, className, ...props }) {
@@ -7,21 +8,41 @@ function FloatingMenu({ children, className, ...props }) {
 
   return (
     <div
-      className={getClassName('floating-menu', className).concat(
-        !show ? ' hide' : ''
+      className={getClassname(
+        'fixed bottom-6 right-7 flex flex-col-reverse gap-y-1 items-center',
+        className,
+        show || 'hide'
       )}
-      {...props}>
-      <div className='floating-menu__toggler'>
+      {...props}
+    >
+      {/* toggler */}
+      <div className="z-20">
         <FloatingBtn
-          onClick={() => setShow(!show)}
-          className='projectpage__floating-btn btn--success btn--round p-2'
-          tooltip={show ? 'Cerrar' : 'Menu'}>
-          <svg className='svg'>
-            <use href='./assets/svg/plus.svg#plus'></use>
-          </svg>
+          onClick={() => setShow((state) => !state)}
+          className={getClassname(
+            'bg-success rounded-full text-white p-2 shadow-md shadow-zinc-300',
+            show ? '' : ''
+          )}
+          tooltip={show ? 'Cerrar' : 'Menu'}
+        >
+          <SVG
+            href="./assets/svg/plus.svg#plus"
+            className={getClassname(
+              'h-8 w-8 duration-300 transition-transform',
+              show ? 'rotate-[135deg]' : 'rotate-0'
+            )}
+          />
         </FloatingBtn>
       </div>
-      <div className='floating-menu__actions'>{children}</div>
+      {/* actions */}
+      <div
+        className={getClassname(
+          'flex flex-1 flex-col-reverse gap-y-4 py-4 max-h-[30vh] transition-[max-height] duration-500 origin-bottom mx-auto',
+          show ? '' : 'max-h-0 opacity-0 mb-0 duration-150'
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 }

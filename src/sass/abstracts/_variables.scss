@@ -30,9 +30,9 @@ $ff-main: 'Montserrat', sans-serif;
 $ff-alt: 'Source Sans Pro', sans-serif;
 
 // Z-index
-$z-below: -1;
-$z-base: 0;
-$z-absolute: 1;
-$z-fixed: 2;
-$z-sidebar: 3;
-$z-toast: 4;
+$z-below: -1; // -10
+$z-base: 0; // 0
+$z-absolute: 1; // 10
+$z-fixed: 2; // 20
+$z-sidebar: 3; // 30
+$z-toast: 4; // 40

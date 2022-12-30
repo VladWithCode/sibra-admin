@@ -7,7 +7,18 @@ module.exports = {
     './src/main.jsx',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        main: "'Montserrat', sans-serif",
+        alt: "'Source Sans Pro', sans-serif",
+      },
+      colors: {
+        success: '#14e95f',
+        info: '#007bce',
+        warning: '#e7ba3c',
+        error: '#ff353f',
+      },
+    },
   },
   plugins: [],
-}
+};

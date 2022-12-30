@@ -3,12 +3,13 @@ import ProjectCard from '../../components/Projects/ProjectCard';
 import ScreenHeader from '../../components/Screen/ScreenHeader';
 import ProjectMenu from '../../components/Projects/ProjectMenu';
 import useProjects from '../../context/Projects/useProjects';
+import Screen from '../../components/Screen/Screen';
 
 function Projects() {
   const { projects, loading } = useProjects();
 
   return (
-    <div className='projectpage ui-screen'>
+    <Screen>
       <ScreenHeader heading='Proyectos'></ScreenHeader>
       {loading ? (
         <div className='d-f'>
@@ -22,7 +23,7 @@ function Projects() {
         </div>
       )}
       <ProjectMenu />
-    </div>
+    </Screen>
   );
 }
 

@@ -11,6 +11,7 @@ import LotsSection from '../../components/Projects/LotsSection';
 import StatSection from '../../components/Projects/StatSection';
 import FileSection from '../../components/Projects/FileSection';
 import ChargeSection from '../../components/Projects/ChargeSection';
+import Screen from '../../components/Screen/Screen';
 
 function Project() {
   const { pid } = useParams();
@@ -20,22 +21,24 @@ function Project() {
 
   useEffect(() => {
     if (!project && projects?.length > 0) {
-      setProject(projects.find(p => p._id === pid));
+      setProject(projects.find((p) => p._id === pid));
     }
   }, [pid, projects, index]);
 
   return (
-    <div className='projectpage ui-screen dark'>
+    <Screen>
       <ScreenHeader
-        heading={<ProjectHeading heading={project?.name} />}></ScreenHeader>
+        heading={<ProjectHeading heading={project?.name} />}
+      ></ScreenHeader>
       {(!project && (
         <div
-          className='ui-screen__body d-f'
-          style={{ '--spin-sz': '7.5rem', '--spin-w': '1rem' }}>
-          <div className='ui-spinner'></div>
+          className="ui-screen__body d-f"
+          style={{ '--spin-sz': '7.5rem', '--spin-w': '1rem' }}
+        >
+          <div className="ui-spinner"></div>
         </div>
       )) || (
-        <div className='ui-screen__body project-details__body --scroll'>
+        <div className="ui-screen__body project-details__body --scroll">
           <DetailsSection project={project} />
           <LotsSection project={project} />
           {false && <StatSection project={project} />}
@@ -43,8 +46,8 @@ function Project() {
           <ChargeSection project={project} />
         </div>
       )}
-      <BackBtn to='/projects' onClick={() => forceReset('projects')} />
-    </div>
+      <BackBtn to="/projects" onClick={() => forceReset('projects')} />
+    </Screen>
   );
 }
 

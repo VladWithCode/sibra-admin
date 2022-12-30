@@ -5,9 +5,14 @@ function Button({ children, type = 'button', onClick, className, ...props }) {
   return (
     <button
       type={type}
-      className={getClassName('btn', className, props.replaceClassName)}
+      className={getClassName(
+        'text-base cursor-pointer m-auto',
+        className,
+        props.replaceClassName
+      )}
       onClick={onClick}
-      {...props}>
+      {...props}
+    >
       {children}
     </button>
   );

@@ -3,5 +3,62 @@
 @tailwind utilities;
 
 body {
-  @apply bg-zinc-50
+  @apply bg-zinc-100;
+  @apply font-main;
+}
+
+.toast {
+  animation: toastDown 0.25s;
+
+  &.visible {
+    opacity: 1;
+    animation: toastUp 0.4s;
+    animation-fill-mode: forwards;
+  }
+
+  &.success {
+    @apply bg-emerald-200;
+    @apply text-emerald-600;
+  }
+
+  &.info {
+    @apply bg-sky-300;
+    @apply text-sky-700;
+  }
+
+  &.warning {
+    @apply bg-orange-300;
+    @apply text-orange-600;
+  }
+
+  &.error {
+    @apply bg-red-300;
+    @apply text-error;
+  }
+}
+
+@keyframes toastDown {
+  from {
+    bottom: 2rem;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -4rem;
+    opacity: 0;
+  }
+}
+
+@keyframes toastUp {
+  0% {
+    bottom: -4rem;
+  }
+
+  95% {
+    bottom: 4.5rem;
+  }
+
+  100% {
+    bottom: 2rem;
+  }
 }

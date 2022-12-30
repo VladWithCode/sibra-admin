@@ -12,7 +12,11 @@ function NavLink({
     <Link
       to={to}
       className={({ isActive }) =>
-        getClassName('flex items-center justify-start w-full pl-4 hover:text-emerald-500', isActive && 'text-emerald-500', pushBot && 'bot')
+        getClassName(
+          'flex items-center justify-start w-full pl-2 hover:text-emerald-500',
+          isActive ? 'text-emerald-500' : 'text-gray-700',
+          pushBot && 'bot'
+        )
       }
     >
       {children}

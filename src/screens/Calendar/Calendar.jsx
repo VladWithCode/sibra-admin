@@ -1,11 +1,12 @@
 import React from 'react';
+import Screen from '../../components/Screen/Screen';
 import ScreenHeader from '../../components/Screen/ScreenHeader';
 
 function Calendar() {
   return (
-    <div className='ui-screen'>
+    <Screen>
       <ScreenHeader heading='Calendario'></ScreenHeader>
-    </div>
+    </Screen>
   );
 }
 

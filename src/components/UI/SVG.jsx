@@ -5,8 +5,8 @@ function SVG({ id, className, href, style, ...props }) {
   return (
     <svg
       className={getClassName(
-        'fill-current duration-300',
-        className || 'w-8 h-8'
+        'duration-300',
+        className || 'w-8 h-8 fill-current'
       )}
       style={style}
       {...props}

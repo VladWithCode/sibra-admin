@@ -1,3 +1,3 @@
 export default function getClassname(...args) {
-  args.filter(Boolean).join(' ');
+  return args.filter(Boolean).join(' ');
 }

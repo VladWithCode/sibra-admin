@@ -7,8 +7,8 @@ function Toggler({ isExpanded, onClick }) {
     <div
       onClick={onClick}
       className={getClassName(
-        'fixed flex items-center justify-center left-4 top-5 bg-white rounded-full p-2 duration-300 transition-[left]',
-        isExpanded ? 'left-48 text-blue-700' : 'shadow-none'
+        'fixed flex items-center justify-center top-5 bg-white rounded-full p-2 duration-300 transition-[left]',
+        isExpanded ? 'left-48 text-blue-700' : 'shadow-none left-2'
       )}
     >
       <SVG
