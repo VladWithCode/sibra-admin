@@ -10,7 +10,7 @@ function createWindow() {
     minHeight: 680,
     autoHideMenuBar: true,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'electron/preload.js'),
     },
   });
 
@@ -23,7 +23,7 @@ function createWindow() {
         protocol: 'file:',
         slashes: true,
       })
-    : 'http://localhost:3000';
+    : 'http://localhost:3030';
 
   mainWindow.loadURL(appURL);
 
@@ -36,7 +36,7 @@ function createWindow() {
       callback({
         requestHeaders: {
           ...details.requestHeaders,
-          Origin: 'http://localhost:3000',
+          Origin: 'http://localhost:3030',
         },
       });
     }
@@ -49,7 +49,8 @@ function createWindow() {
       callback({
         responseHeaders: {
           ...details.responseHeaders,
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
+          'Access-Control-Allow-Origin': 'http://localhost:3030',
+          'Content-Security-Policy': ["localhost:3030 default-src 'none'"],
         },
       });
     }
@@ -69,11 +70,15 @@ function setupLocalFilesNormalizerProxy() {
 // is ready to create the browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(async () => {
-  await session.defaultSession.loadExtension(
-    path.normalize(
-      'C:\\Users\\Vladwb\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.25.0_0'
-    )
-  );
+  try {
+    await session.defaultSession.loadExtension(
+      path.normalize(
+        'C:\\Users\\Vladwb\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.25.0_0'
+      )
+    );
+  } catch (err) {
+    console.warn("Couldn't load dev tools");
+  }
   createWindow();
   setupLocalFilesNormalizerProxy();
 
@@ -111,4 +116,4 @@ app.on('web-contents-created', (event, contents) => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-require('./listeners/file');
+require('./electron/listeners/file');
