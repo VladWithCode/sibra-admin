@@ -16,17 +16,12 @@ body {
     animation-fill-mode: forwards;
   }
 
-  &.success {
+  &.message {
     @apply bg-emerald-200;
     @apply text-emerald-600;
   }
 
-  &.info {
-    @apply bg-sky-300;
-    @apply text-sky-700;
-  }
-
-  &.warning {
+  &.warn {
     @apply bg-orange-300;
     @apply text-orange-600;
   }
