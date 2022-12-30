@@ -18,6 +18,9 @@ module.exports = {
         warning: '#e7ba3c',
         error: '#ff353f',
       },
+      boxShadow: {
+        hard: '3px 3px 9px -6px rgba(0,0,0,.3)',
+      },
     },
   },
   plugins: [],

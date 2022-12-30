@@ -20,8 +20,8 @@ function FloatingMenu({ children, className, ...props }) {
         <FloatingBtn
           onClick={() => setShow((state) => !state)}
           className={getClassname(
-            'bg-success rounded-full text-white p-2 shadow-md shadow-zinc-300',
-            show ? '' : ''
+            'bg-success rounded-full text-white p-2 shadow-zinc-400',
+            show ? 'shadow-hard' : 'shadow-none'
           )}
           tooltip={show ? 'Cerrar' : 'Menu'}
         >
