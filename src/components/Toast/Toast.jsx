@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
-import ToastContext from '../../context/Toast/ToastContext';
-import useToast from '../../hooks/context/toast/useToast';
+import React from 'react';
+import useToast from '../../context/toast/useToast';
 import getClassname from '../../utils/getClassname';
 
 function Toast() {
-  const { message, type, isActive } = useToast((state) => state);
-  const { resetToast } = useContext(ToastContext);
+  const { message, type, isActive, reset } = useToast((state) => state);
 
   const handleCloseClick = (e) => {
-    resetToast();
+    reset();
   };
 
   return (

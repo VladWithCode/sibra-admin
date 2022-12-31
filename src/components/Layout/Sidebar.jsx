@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import SidebarContext from '../../context/Sidebar/SidebarContext';
+import React from 'react';
+import useSidebar from '../../context/sidebar/useSidebar';
 import { getClassName } from '../../utils/helpers';
 import Navigation from '../Navigation/Navigation';
 import Toggler from '../Navigation/Toggler';
 
 function Sidebar() {
-  const { isExpanded, toggleIsExpanded } = useContext(SidebarContext);
+  const { isExpanded, toggleIsExpanded } = useSidebar((state) => state);
 
   return (
     <nav

@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
-import NavigationContext from '../../context/Navigation/NavigationContext';
+import React from 'react';
+import useNavigation from '../../context/navigation/useNavigation';
 import SVG from '../UI/SVG';
 import NavLink from './NavLink';
+import shallow from 'zustand/shallow';
 
 function Navigation() {
   const { projectsLink, customersLink, calendarLink, templatesLink } =
-    useContext(NavigationContext);
+    useNavigation(
+      (state) => ({
+        customersLink: state.customersLink,
+        projectsLink: state.projectsLink,
+        calendarLink: state.calendarLink,
+        templatesLink: state.templatesLink,
+      }),
+      shallow
+    );
 
   return (
     <div className="h-5/6 flex flex-col gap-y-12">
