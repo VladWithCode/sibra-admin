@@ -4,16 +4,16 @@ import Button from '../UI/Button';
 import SVG from '../UI/SVG';
 import { useNavigate } from 'react-router-dom';
 
-function ChargeCard({ charge, className }) {
+function ChargeCard({ projectId, charge, className }) {
   const navigate = useNavigate();
 
-  /* const handleEditClick = () => {
-    navigate(`/project/${project._id}/charges/${charge._id}/edit`);
+  const handleEditClick = () => {
+    navigate(`/project/${projectId}/charges/${charge._id}/edit`);
   };
 
   const handleDeleteClick = () => {
-    navigate(`/project/${project._id}/charges/${charge._id}/delete`);
-  }; */
+    navigate(`/project/${projectId}/charges/${charge._id}/delete`);
+  };
 
   return (
     <div className={getClassName('ui-card --info p-1', className)}>

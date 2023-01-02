@@ -3,17 +3,18 @@ import Section from '../Section/Section';
 import FileBtn from '../UI/FileBtn';
 import HeaderBtn from './HeaderBtn';
 
-function FileSection({ project }) {
+function FileSection({ files }) {
   return (
     <Section
-      heading='Archivos'
+      heading="Archivos"
       header={<HeaderBtn>Añadir</HeaderBtn>}
       useCard={true}
-      cardShadow={true}>
-      <div className='section__row col-gap-2'>
-        {project.files.map(f => {
+      cardShadow={true}
+    >
+      <div className="section__row col-gap-2">
+        {files.map((f) => {
           return (
-            <div className='col-auto' key={f._id}>
+            <div className="col-auto" key={f._id}>
               <FileBtn path={f.staticPath}>{f.name}</FileBtn>
             </div>
           );
