@@ -21,6 +21,9 @@ module.exports = {
       boxShadow: {
         hard: '3px 3px 9px -6px rgba(0,0,0,.3)',
       },
+      height: {
+        'screen-body': 'calc(100% - 8rem)',
+      },
     },
   },
   plugins: [],
