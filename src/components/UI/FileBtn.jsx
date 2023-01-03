@@ -4,7 +4,7 @@ import { getClassName } from '../../utils/helpers';
 import Button from './Button';
 
 function FileBtn({ children, path, className, onClick, ...props }) {
-  const _onClick = e => {
+  const _onClick = (e) => {
     typeof onClick === 'function' && onClick(e);
 
     if (!props.forceCustomHandler) {
@@ -31,8 +31,12 @@ function FileBtn({ children, path, className, onClick, ...props }) {
 
   return (
     <Button
-      className={getClassName('btn--border px-2 py-1', className)}
-      onClick={_onClick}>
+      className={getClassName(
+        'border-2 rounded-md border-zinc-600 text-zinc-600 bg-transparent px-2 py-1',
+        className
+      )}
+      onClick={_onClick}
+    >
       {children}
     </Button>
   );

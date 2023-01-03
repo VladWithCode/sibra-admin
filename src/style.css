@@ -9,7 +9,8 @@ body {
 
 #root {
   @apply h-screen;
-  @apply overflow-y-auto;
+  @apply overflow-hidden;
+  @apply relative;
 }
 
 .toast {
@@ -34,6 +35,26 @@ body {
   &.error {
     @apply bg-red-300;
     @apply text-error;
+  }
+}
+
+.--scroll {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: auto;
+    @apply bg-zinc-300;
+    @apply rounded-lg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-info;
+    @apply rounded-lg;
+
+    &:hover {
+      @apply bg-blue-600;
+    }
   }
 }
 

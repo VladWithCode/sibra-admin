@@ -2,8 +2,8 @@ import React from 'react';
 
 function Header({ heading, children }) {
   return (
-    <div className='section__header mb-1'>
-      {heading && <h3 className='fs-3 text-gray px-1'>{heading}</h3>}
+    <div className="flex items-center justify-between mb-4">
+      {heading && <h3 className="texl-lg text-gray-500 px-1">{heading}</h3>}
       {children}
     </div>
   );

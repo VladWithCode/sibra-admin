@@ -3,9 +3,7 @@ import { getClassName } from '../../utils/helpers';
 
 function Screen({ classname, children }) {
   return (
-    <div
-      className={getClassName('relative block w-full h-full pl-12', classname)}
-    >
+    <div className={getClassName('block w-full h-full pl-12', classname)}>
       {children}
     </div>
   );

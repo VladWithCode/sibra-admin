@@ -24,7 +24,7 @@ function Projects() {
   return (
     <Screen>
       <ScreenHeader heading="Proyectos"></ScreenHeader>
-      <div className="projectpage__listing p-3">
+      <div className="w-full grid grid-cols-2 lg:grid-cols-3 auto-rows-[15rem] gap-8 projectpage__listing p-3">
         {data.projects.map((p) => (
           <ProjectCard project={p} key={p._id} />
         ))}

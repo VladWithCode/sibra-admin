@@ -1,4 +1,5 @@
 import React from 'react';
+import Row from '../Section/Row';
 import Section from '../Section/Section';
 import FileBtn from '../UI/FileBtn';
 import HeaderBtn from './HeaderBtn';
@@ -11,15 +12,15 @@ function FileSection({ files }) {
       useCard={true}
       cardShadow={true}
     >
-      <div className="section__row col-gap-2">
+      <Row className="gap-x-4">
         {files.map((f) => {
           return (
-            <div className="col-auto" key={f._id}>
+            <div className="basis-auto grow-0 shrink-0" key={f._id}>
               <FileBtn path={f.staticPath}>{f.name}</FileBtn>
             </div>
           );
         })}
-      </div>
+      </Row>
     </Section>
   );
 }

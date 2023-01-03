@@ -38,7 +38,7 @@ function Project() {
       <ScreenHeader
         heading={<ProjectHeading heading={project.name} />}
       ></ScreenHeader>
-      <div className="ui-screen__body project-details__body --scroll">
+      <div className="py-5 px-8 grid grid-cols-2 gap-x-12 gap-y-6 lg:gap-x-7 h-[calc(100%-8rem)] --scroll">
         <DetailsSection project={project} />
         <LotsSection project={project} />
         {false && <StatSection project={project} />}

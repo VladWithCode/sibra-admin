@@ -6,17 +6,18 @@ import { useNavigate } from 'react-router-dom';
 function BackBtn({ to, onClick }) {
   const navigate = useNavigate();
 
-  const _onClick = e => {
+  const _onClick = (e) => {
     typeof onClick === 'function' && onClick(e);
     navigate(typeof to === 'string' ? to : -1);
   };
 
   return (
     <FloatingBtn
-      className='btn--danger btn--round btn--back p-0'
-      style={{ right: 'initial', left: '7rem' }}
-      onClick={_onClick}>
-      <SVG id='angle' style={{ '--icon-sz': '4rem' }} />
+      className="bg-error border-2 border-error rounded-full btn--back p-0 left-16 bottom-6 shadow shadow-zinc-200 -rotate-180 text-white hover:bg-white hover:text-error "
+      style={{ position: 'fixed' }}
+      onClick={_onClick}
+    >
+      <SVG className="w-10 h-10 fill-current" id="angle" />
     </FloatingBtn>
   );
 }
