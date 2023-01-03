@@ -8,7 +8,7 @@ function BackBtn({ to, onClick }) {
 
   const _onClick = (e) => {
     typeof onClick === 'function' && onClick(e);
-    navigate(typeof to === 'string' ? to : -1);
+    navigate(typeof to === 'string' && to.length > 0 ? to : -1);
   };
 
   return (
