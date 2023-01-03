@@ -5,7 +5,7 @@ import Header from './Header';
 function Section({ className, heading, header, children, ...props }) {
   return (
     <div className={getClassname('h-max', className)}>
-      <Header heading={heading}>{header}</Header>
+      {!props.headless ? <Header heading={heading}>{header}</Header> : null}
       <div
         className={getClassname(
           'relative',
