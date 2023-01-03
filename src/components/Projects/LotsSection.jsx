@@ -10,7 +10,7 @@ function LotsSection({ project }) {
       heading="Lotes"
       useCard={true}
       cardShadow={true}
-      bodyClass="fs-4 fw-500"
+      bodyClass="text-base font-medium"
       header={<HeaderBtn>Ver todos</HeaderBtn>}
     >
       <Row>
