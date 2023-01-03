@@ -11,9 +11,10 @@ import FileSection from '../../components/Projects/FileSection';
 import ChargeSection from '../../components/Projects/ChargeSection';
 import Screen from '../../components/Screen/Screen';
 import useNavigation from '../../context/navigation/useNavigation';
-import { useGetProjectById } from '../../requests/projects/useProjectQueries';
+import { useGetProjectById } from '../../services/projects/useProjectQueries';
 import ErrorScreen from '../../components/Screen/ErrorScreen';
 import LoadingScreen from '../../components/Screen/LoadingScreen';
+import ScreenBody from '../../components/Screen/ScreenBody';
 
 function Project() {
   const { pid } = useParams();
@@ -38,13 +39,13 @@ function Project() {
       <ScreenHeader
         heading={<ProjectHeading heading={project.name} />}
       ></ScreenHeader>
-      <div className="py-5 px-8 grid grid-cols-2 gap-x-12 gap-y-6 lg:gap-x-7 h-[calc(100%-8rem)] --scroll">
+      <ScreenBody maxCols={2}>
         <DetailsSection project={project} />
         <LotsSection project={project} />
         {false && <StatSection project={project} />}
         <FileSection files={project.files} />
         <ChargeSection projectId={project._id} charges={project.extraCharges} />
-      </div>
+      </ScreenBody>
       <BackBtn to="/projects" onClick={() => resetLink('projectsLink')} />
     </Screen>
   );
