@@ -9,16 +9,9 @@ import LoadingScreen from '../../components/Screen/LoadingScreen';
 import ScreenBody from '../../components/Screen/ScreenBody';
 
 function Projects() {
-  const { data, isLoading, isError } = useGetProjects({});
+  const { data, isLoading, isError, error } = useGetProjects({});
 
-  if (isError)
-    return (
-      <ErrorScreen
-        error={{
-          message: 'Ocurrio un error al recuperar el proyecto solicitado',
-        }}
-      />
-    );
+  if (isError) return <ErrorScreen error={error} />;
 
   if (isLoading) return <LoadingScreen />;
 

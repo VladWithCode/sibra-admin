@@ -19,16 +19,9 @@ import ScreenBody from '../../components/Screen/ScreenBody';
 function Project() {
   const { pid } = useParams();
   const resetLink = useNavigation((state) => state.resetLink);
-  const { isLoading, isError, data } = useGetProjectById(pid);
+  const { isLoading, isError, error, data } = useGetProjectById(pid);
 
-  if (isError)
-    return (
-      <ErrorScreen
-        error={{
-          message: 'Ocurrio un error al recuperar el proyecto solicitado',
-        }}
-      />
-    );
+  if (isError) return <ErrorScreen error={error} />;
 
   if (isLoading) return <LoadingScreen />;
 
