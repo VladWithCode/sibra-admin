@@ -10,7 +10,7 @@ function Section({ className, heading, header, children, ...props }) {
         className={getClassname(
           'relative',
           props.useCard && 'relative bg-white rounded-lg py-3 px-5',
-          props.cardShadow && 'shadow-hard shadow-zinc-400',
+          props.cardShadow && 'shadow-md shadow-zinc-200',
           props.bodyClass
         )}
       >
