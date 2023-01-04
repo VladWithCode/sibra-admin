@@ -1,50 +1,30 @@
 import React, { useState } from 'react';
+import DebouncedInput from '../../components/Forms/DebouncedInput';
 import ErrorScreen from '../../components/Screen/ErrorScreen';
 import Screen from '../../components/Screen/Screen';
 import ScreenBody from '../../components/Screen/ScreenBody';
 import ScreenHeader from '../../components/Screen/ScreenHeader';
 import Section from '../../components/Section/Section';
 import Spinner from '../../components/UI/Spinner';
-import { useDebounce } from '../../hooks/useDebounce';
 import { useGetCustomers } from '../../services/customers/useCustomers';
-
-const getFullname = (...args) => args.filter(Boolean).join(' ');
-
-const SearchInput = ({ onChange, value }) => (
-  <input
-    className="border-2 boder-zinc-200 rounded-full px-4 py-1"
-    type="text"
-    placeholder="Busca un nombre"
-    onChange={onChange}
-    value={value}
-  />
-);
 
 function Customers() {
   const [search, setSearch] = useState('');
-  const [name, setName] = useState('');
   const { data, isLoading, isError, error } = useGetCustomers({
-    name,
+    name: search,
     sort: 'names',
   });
-  const onSearchChange = (e) => setSearch(e.target.value);
 
-  useDebounce(
-    () => {
-      setName(search);
-    },
-    500,
-    [search]
-  );
+  const onChangeCb = (value) => setSearch(value);
 
   if (isError) return <ErrorScreen error={error} />;
 
   return (
     <Screen>
       <ScreenHeader className="justify-between" heading="Clientes">
-        <SearchInput onChange={onSearchChange} />
+        <DebouncedInput onChangeCb={onChangeCb} placeholder="Busca un nombre" />
       </ScreenHeader>
-      <ScreenBody className="auto-rows-[15rem]" maxCols={3}>
+      <ScreenBody className="auto-rows-[15rem]">
         {isLoading ? <Spinner /> : null}
         {data?.customers
           ? data.customers.map((customer) => (
@@ -57,13 +37,7 @@ function Customers() {
               >
                 <p className="text-xs text-zinc-300">{customer.rfc}</p>
                 <p className="text-xs text-zinc-300">{customer.curp}</p>
-                <p className="text-xl mt-auto">
-                  {getFullname(
-                    customer.names,
-                    customer.patLastname,
-                    customer.matLastname
-                  )}
-                </p>
+                <p className="text-xl mt-auto">{customer.fullName}</p>
                 <p className="text-base text-zinc-500">
                   {customer.phoneNumber}
                 </p>
