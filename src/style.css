@@ -42,7 +42,7 @@ body {
   overflow: auto;
 
   &::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
     height: auto;
     @apply bg-zinc-300;
     @apply rounded-lg;
