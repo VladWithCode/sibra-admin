@@ -32,7 +32,7 @@ function Project() {
       <ScreenHeader
         heading={<ProjectHeading heading={project.name} />}
       ></ScreenHeader>
-      <ScreenBody maxCols={2}>
+      <ScreenBody>
         <DetailsSection project={project} />
         <LotsSection project={project} />
         {false && <StatSection project={project} />}
