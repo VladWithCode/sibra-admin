@@ -5,7 +5,7 @@ function ScreenHeader({ heading, children, className }) {
   return (
     <div
       className={getClassName(
-        'flex items-center h-32 bg-white shadow-sm shadow-zinc-200 pt-3 px-10',
+        'flex items-center h-32 bg-white shadow-sm shadow-zinc-200 pt-3 px-24',
         className
       )}
     >
