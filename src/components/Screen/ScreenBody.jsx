@@ -1,11 +1,11 @@
 import React from 'react';
 import getClassname from '../../utils/getClassname';
 
-function ScreenBody({ className, children, ...props }) {
+function ScreenBody({ className, children }) {
   return (
     <div
       className={getClassname(
-        'py-5 px-8 grid grid-cols-2 gap-x-12 gap-y-6 lg:gap-y-7 lg:grid-cols-3 h-screen-body --scroll',
+        'pt-8 px-24 grid grid-cols-2 gap-x-12 gap-y-6 lg:gap-y-7 h-screen-body --scroll',
         className
       )}
     >
