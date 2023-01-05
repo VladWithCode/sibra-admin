@@ -8,7 +8,6 @@ function ChargeSection({ projectId, charges }) {
     <Section
       heading="Aportaciones"
       useCard={true}
-      cardShadow={true}
       bodyClass="p-4 text-base font-medium --scroll max-h-[260px] space-y-4"
       header={<HeaderBtn>Ver más detalles</HeaderBtn>}
     >
