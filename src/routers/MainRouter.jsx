@@ -2,6 +2,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { App } from '../App';
 import ErrorScreen from '../components/Screen/ErrorScreen';
 import Calendar from '../screens/Calendar/Calendar';
+import Customer from '../screens/Customers/Customer';
 import Customers from '../screens/Customers/Customers';
 import Home from '../screens/Home';
 import Project from '../screens/Projects/Project';
@@ -19,7 +20,10 @@ function MainRouter() {
             <Route index element={<Project />} />
             <Route path="charge/:cid/edit" element={<>hello world</>}></Route>
           </Route>
-          <Route path="/customers" element={<Customers />} />
+          <Route path="/customers">
+            <Route index element={<Customers />}></Route>
+            <Route path=":id" element={<Customer />}></Route>
+          </Route>
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/templates" element={<Templates />} />
           <Route
