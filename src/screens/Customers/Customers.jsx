@@ -27,7 +27,7 @@ function Customers() {
       <ScreenHeader className="justify-between" heading="Clientes">
         <DebouncedInput onChangeCb={onChangeCb} placeholder="Busca un nombre" />
       </ScreenHeader>
-      <ScreenBody className="auto-rows-[15rem]">
+      <ScreenBody className="auto-rows-[15rem] lg:grid-cols-3">
         {isLoading ? <Spinner /> : null}
         {data?.customers
           ? data.customers.map((customer) => (

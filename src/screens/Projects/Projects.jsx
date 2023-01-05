@@ -18,7 +18,7 @@ function Projects() {
   return (
     <Screen>
       <ScreenHeader heading="Proyectos"></ScreenHeader>
-      <ScreenBody className="auto-rows-[15rem]" maxCols={3}>
+      <ScreenBody className="auto-rows-[15rem] lg:grid-cols-3">
         {data.projects.map((p) => (
           <ProjectCard project={p} key={p._id} />
         ))}
