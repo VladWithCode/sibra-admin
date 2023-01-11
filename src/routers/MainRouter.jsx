@@ -5,6 +5,7 @@ import Calendar from '../screens/Calendar/Calendar';
 import Customer from '../screens/Customers/Customer';
 import Customers from '../screens/Customers/Customers';
 import Home from '../screens/Home';
+import LotListing from '../screens/Lots/LotListing';
 import Project from '../screens/Projects/Project';
 import Projects from '../screens/Projects/Projects';
 import Templates from '../screens/Templates/Templates';
@@ -18,6 +19,7 @@ function MainRouter() {
           <Route path="/projects" element={<Projects />}></Route>
           <Route path="/project/:pid">
             <Route index element={<Project />} />
+            <Route path="lots" element={<LotListing />} />
             <Route path="charge/:cid/edit" element={<>hello world</>}></Route>
           </Route>
           <Route path="/customers">

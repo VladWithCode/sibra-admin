@@ -7,7 +7,7 @@ const paths = {
 };
 
 export const fetchCustomers = async ({ queryKey }) => {
-  const [, type, params] = queryKey;
+  const [_ctx, type, params] = queryKey;
 
   const response = await fetch(API_URL + '/customers' + paths[type](params));
   const data = await response.json();

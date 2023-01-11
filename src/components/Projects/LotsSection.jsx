@@ -1,17 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useNavigation from '../../context/navigation/useNavigation';
 import Detail from '../Section/Detail';
 import Row from '../Section/Row';
 import Section from '../Section/Section';
-import HeaderBtn from './HeaderBtn';
 
 function LotsSection({ project }) {
+  const setLink = useNavigation((state) => state.setLink);
+
   return (
     <Section
       heading="Lotes"
       useCard={true}
       cardShadow={true}
       bodyClass="text-base font-medium"
-      header={<HeaderBtn>Ver todos</HeaderBtn>}
+      header={
+        <Link
+          className="text-base py-.5 px-2 shadow-hard shadow-zinc-400 bg-info border-2 border-info text-white hover:bg-white hover:text-info ml-auto mr-2 rounded-full"
+          to={`/project/${project._id}/lots`}
+          onClick={() => setLink(`/project/${project._id}/lots`)}
+        >
+          Ver todos
+        </Link>
+      }
     >
       <Row>
         <Detail

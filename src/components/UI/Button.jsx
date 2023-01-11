@@ -6,7 +6,7 @@ function Button({ children, type = 'button', onClick, className, ...props }) {
     <button
       type={type}
       className={getClassName(
-        'text-base cursor-pointer m-auto',
+        'text-base cursor-pointer m-auto border-2',
         className,
         props.replaceClassName
       )}
