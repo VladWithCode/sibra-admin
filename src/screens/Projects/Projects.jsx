@@ -2,27 +2,29 @@ import React from 'react';
 import ProjectCard from '../../components/Projects/ProjectCard';
 import ScreenHeader from '../../components/Screen/ScreenHeader';
 import ProjectMenu from '../../components/Projects/ProjectMenu';
-import useProjects from '../../context/Projects/useProjects';
+import Screen from '../../components/Screen/Screen';
+import { useGetProjects } from '../../services/projects/useProjectQueries';
+import ErrorScreen from '../../components/Screen/ErrorScreen';
+import LoadingScreen from '../../components/Screen/LoadingScreen';
+import ScreenBody from '../../components/Screen/ScreenBody';
 
 function Projects() {
-  const { projects, loading } = useProjects();
+  const { data, isLoading, isError, error } = useGetProjects({});
+
+  if (isError) return <ErrorScreen error={error} />;
+
+  if (isLoading) return <LoadingScreen />;
 
   return (
-    <div className='projectpage ui-screen'>
-      <ScreenHeader heading='Proyectos'></ScreenHeader>
-      {loading ? (
-        <div className='d-f'>
-          <div className='ui-spinner'></div>
-        </div>
-      ) : (
-        <div className='projectpage__listing p-3'>
-          {projects.map(p => (
-            <ProjectCard project={p} key={p._id} />
-          ))}
-        </div>
-      )}
+    <Screen>
+      <ScreenHeader heading="Proyectos"></ScreenHeader>
+      <ScreenBody className="auto-rows-[15rem] lg:grid-cols-3">
+        {data.projects.map((p) => (
+          <ProjectCard project={p} key={p._id} />
+        ))}
+      </ScreenBody>
       <ProjectMenu />
-    </div>
+    </Screen>
   );
 }
 

@@ -1,20 +1,26 @@
 import React from 'react';
-import FloatingBtn from '../../components/Floating/FloatingBtn';
 import FloatingMenu from '../../components/Floating/FloatingMenu';
+import Action from '../Floating/Action';
+import SVG from '../UI/SVG';
 
 function ProjectMenu() {
   return (
-    <FloatingMenu style={{ '--icon-sz': '2.2rem' }}>
-      <FloatingBtn className='btn--info btn--round' tooltip='Editar proyecto'>
-        <svg>
-          <use href='./assets/svg/pencil.svg#pencil'></use>
-        </svg>
-      </FloatingBtn>
-      <FloatingBtn className='btn--info btn--round' tooltip='Generar Lotes'>
-        <svg>
-          <use href='./assets/svg/land.svg#land'></use>
-        </svg>
-      </FloatingBtn>
+    <FloatingMenu>
+      <Action
+        className="p-2 shadow-md shadow-zinc-300 rounded-full hover:shadow-lg bg-white"
+        tooltip="Editar proyecto"
+      >
+        <SVG
+          href="./assets/svg/pencil.svg#pencil"
+          className="h-7 w-7 fill-info"
+        />
+      </Action>
+      <Action
+        className="p-2 shadow-md shadow-zinc-300 rounded-full hover:shadow-lg bg-white"
+        tooltip="Generar Lotes"
+      >
+        <SVG href="./assets/svg/land.svg#land" className="h-7 w-7 fill-info" />
+      </Action>
     </FloatingMenu>
   );
 }

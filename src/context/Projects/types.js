@@ -1,9 +1,0 @@
-export const SET_PROJECTS = 'SET_PROJECTS';
-
-export const SET_PROJECT = 'SET_PROJECT';
-
-export const SET_PROJECT_FIELD = 'SET_PROJECT_FIELD';
-
-export const SET_NEW_PROJECT = 'SET_NEW_PROJECT';
-
-export const SET_NEW_PROJECT_FIELD = 'SET_NEW_PROJECT_FIELD';

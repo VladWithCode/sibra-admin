@@ -1,12 +1,13 @@
 import React from 'react';
+import Screen from '../components/Screen/Screen';
 import ScreenHeader from '../components/Screen/ScreenHeader';
 
 function Home() {
   return (
-    <div className='homepage ui-screen'>
-      <ScreenHeader heading='Inicio' className='homepage__header' />
-      <div className='homepage__body ui-screen__body --flex'></div>
-    </div>
+    <Screen>
+      <ScreenHeader heading="Inicio" className="homepage__header" />
+      <div className="py-5 px-[5%]"></div>
+    </Screen>
   );
 }
 

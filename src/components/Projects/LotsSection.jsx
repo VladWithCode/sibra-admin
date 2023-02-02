@@ -1,44 +1,74 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useNavigation from '../../context/navigation/useNavigation';
+import Detail from '../Section/Detail';
+import Row from '../Section/Row';
 import Section from '../Section/Section';
-import HeaderBtn from './HeaderBtn';
 
 function LotsSection({ project }) {
+  const setLink = useNavigation((state) => state.setLink);
+
   return (
     <Section
-      heading='Lotes'
+      heading="Lotes"
       useCard={true}
       cardShadow={true}
-      bodyClass='fs-4 fw-500'
-      header={<HeaderBtn>Ver todos</HeaderBtn>}>
-      <div className='section__row'>
-        <div className='col-2 fw-700'>Lotes</div>
-        <div className='col-2 text-right'>{project.totalLots}</div>
-      </div>
-      <div className='section__row text-primary-l'>
-        <div className='col-2 fw-700'>Lotes Disponibles</div>
-        <div className='col-2 text-right'>{project.availableLots}</div>
-      </div>
-      <div className='section__row text-warning'>
-        <div className='col-2 fw-700'>Lotes En Pago</div>
-        <div className='col-2 text-right'>{project.reservedLots}</div>
-      </div>
-      <div className='section__row text-primary'>
-        <div className='col-2 fw-700'>Lotes Liquidados</div>
-        <div className='col-2 text-right'>{project.liquidatedLots}</div>
-      </div>
-      <div className='section__row text-info'>
-        <div className='col-2 fw-700'>Lotes Entregados</div>
-        <div className='col-2 text-right'>{project.deliveredLots}</div>
-      </div>
-      <hr className='mb-1' />
-      <div className='section__row'>
-        <div className='col-2 fw-700'>Manzanas</div>
-        <div className='col-2 text-right'>{project.manzanas}</div>
-      </div>
-      <div className='section__row text-primary-d'>
-        <div className='col-2 fw-700'>Areas Verdes (No. Manzana)</div>
-        <div className='col-2 text-right'>{project.greenAreas?.join(', ')}</div>
-      </div>
+      bodyClass="text-base font-medium"
+      header={
+        <Link
+          className="text-base py-.5 px-2 shadow-hard shadow-zinc-400 bg-info border-2 border-info text-white hover:bg-white hover:text-info ml-auto mr-2 rounded-full"
+          to={`/project/${project._id}/lots`}
+          onClick={() => setLink(`/project/${project._id}/lots`)}
+        >
+          Ver todos
+        </Link>
+      }
+    >
+      <Row>
+        <Detail
+          className="text-zinc-600"
+          title="No. Lotes"
+          value={project.totalLots}
+        />
+      </Row>
+      <Row>
+        <Detail
+          className="text-sky-400"
+          title="Lotes Disponibles"
+          value={project.availableLots}
+        />
+      </Row>
+      <Row>
+        <Detail
+          className="text-emerald-400"
+          title="Lotes En Pago"
+          value={project.reservedLots}
+        />
+      </Row>
+      <Row>
+        <Detail
+          className="text-emerald-600"
+          title="Lotes Liquidados"
+          value={project.liquidatedLots}
+        />
+      </Row>
+      <Row>
+        <Detail
+          className="text-sky-600"
+          title="Lotes Entregados"
+          value={project.deliveredLots}
+        />
+      </Row>
+      <hr className="mb-1" />
+      <Row>
+        <Detail title="Manzanas" value={project.manzanas} />
+      </Row>
+      <Row>
+        <Detail
+          title="Areas Verdes (No. Manzana)"
+          value={project.greenAreas?.join(', ')}
+        />
+      </Row>
     </Section>
   );
 }

@@ -1,20 +1,19 @@
 import React from 'react';
-import { getClassName } from '../../utils/helpers';
+import getClassname from '../../utils/getClassname';
+import Card from '../UI/Card';
 import Header from './Header';
 
 function Section({ className, heading, header, children, ...props }) {
   return (
-    <div className={getClassName('section', className)}>
-      <Header heading={heading}>{header}</Header>
-      <div
-        className={getClassName(
-          'section__body',
-          `${props.useCard ? 'ui-card' : ''} ${
-            props.cardShadow ? ' --shadow-dark' : ''
-          } ${props.bodyClass || ''}`
-        )}>
-        {children}
-      </div>
+    <div className={getClassname('h-max', className)}>
+      {!props.headless ? <Header heading={heading}>{header}</Header> : null}
+      {props.useCard ? (
+        <Card className={props.bodyClass}>{children}</Card>
+      ) : (
+        <div className={getClassname('relative', props.bodyClass)}>
+          {children}
+        </div>
+      )}
     </div>
   );
 }

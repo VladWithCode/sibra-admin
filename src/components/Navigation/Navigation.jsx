@@ -1,42 +1,57 @@
-import React, { useContext } from 'react';
-import NavigationContext from '../../context/Navigation/NavigationContext';
+import React from 'react';
+import useNavigation from '../../context/navigation/useNavigation';
+import SVG from '../UI/SVG';
 import NavLink from './NavLink';
+import shallow from 'zustand/shallow';
 
 function Navigation() {
   const { projectsLink, customersLink, calendarLink, templatesLink } =
-    useContext(NavigationContext);
+    useNavigation(
+      (state) => ({
+        customersLink: state.customersLink,
+        projectsLink: state.projectsLink,
+        calendarLink: state.calendarLink,
+        templatesLink: state.templatesLink,
+      }),
+      shallow
+    );
 
   return (
-    <div className='sidebar__links'>
-      <NavLink to='/'>
-        <svg>
-          <use href='./assets/svg/home.svg#home'></use>
-        </svg>
-        <span>Inicio</span>
+    <div className="h-5/6 flex flex-col gap-y-12">
+      <NavLink to="/">
+        <SVG
+          className="w-8 h-8 fill-current"
+          href="./assets/svg/home.svg#home"
+        />
+        <span className="ml-4">Inicio</span>
       </NavLink>
       <NavLink to={projectsLink}>
-        <svg>
-          <use href='./assets/svg/land.svg#land'></use>
-        </svg>
-        <span>Proyectos</span>
+        <SVG
+          className="w-8 h-8 fill-current"
+          href="./assets/svg/land.svg#land"
+        />
+        <span className="ml-4">Proyectos</span>
       </NavLink>
       <NavLink to={customersLink}>
-        <svg>
-          <use href='./assets/svg/users.svg#users'></use>
-        </svg>
-        <span>Clientes</span>
+        <SVG
+          className="w-8 h-8 fill-current"
+          href="./assets/svg/users.svg#users"
+        />
+        <span className="ml-4">Clientes</span>
       </NavLink>
       <NavLink to={calendarLink}>
-        <svg>
-          <use href='./assets/svg/calendar.svg#calendar'></use>
-        </svg>
-        <span>Calendario</span>
+        <SVG
+          className="w-8 h-8 fill-current"
+          href="./assets/svg/calendar.svg#calendar"
+        />
+        <span className="ml-4">Calendario</span>
       </NavLink>
       <NavLink to={templatesLink}>
-        <svg>
-          <use href='./assets/svg/file.svg#file'></use>
-        </svg>
-        <span>Platillas</span>
+        <SVG
+          className="w-8 h-8 fill-current"
+          href="./assets/svg/file.svg#file"
+        />
+        <span className="ml-4">Platillas</span>
       </NavLink>
       {/* <NavLink to='/stats'>
         <svg>

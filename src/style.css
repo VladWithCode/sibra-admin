@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-100;
+  @apply font-main;
+}
+
+#root {
+  @apply h-screen;
+  @apply overflow-hidden;
+  @apply relative;
+}
+
+.toast {
+  animation: toastDown 0.25s;
+
+  &.visible {
+    opacity: 1;
+    animation: toastUp 0.4s;
+    animation-fill-mode: forwards;
+  }
+
+  &.message {
+    @apply bg-emerald-200;
+    @apply text-emerald-600;
+  }
+
+  &.warn {
+    @apply bg-orange-300;
+    @apply text-orange-600;
+  }
+
+  &.error {
+    @apply bg-red-300;
+    @apply text-error;
+  }
+}
+
+.--scroll {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: auto;
+    @apply bg-zinc-300;
+    @apply rounded-lg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-info;
+    @apply rounded-lg;
+
+    &:hover {
+      @apply bg-blue-600;
+    }
+  }
+}
+
+@keyframes toastDown {
+  from {
+    bottom: 2rem;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -4rem;
+    opacity: 0;
+  }
+}
+
+@keyframes toastUp {
+  0% {
+    bottom: -4rem;
+  }
+
+  95% {
+    bottom: 4.5rem;
+  }
+
+  100% {
+    bottom: 2rem;
+  }
+}

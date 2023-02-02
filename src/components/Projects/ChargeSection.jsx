@@ -3,18 +3,21 @@ import ChargeCard from '../Charges/ChargeCard';
 import Section from '../Section/Section';
 import HeaderBtn from './HeaderBtn';
 
-function ChargeSection({ project }) {
-  const { extraCharges } = project;
-
+function ChargeSection({ projectId, charges }) {
   return (
     <Section
-      heading='Aportaciones'
+      heading="Aportaciones"
       useCard={true}
-      cardShadow={true}
-      bodyClass='p-1 fs-4 fw-500 --scroll charge-list'
-      header={<HeaderBtn>Ver más detalles</HeaderBtn>}>
-      {extraCharges?.map(ch => (
-        <ChargeCard key={ch._id} className='section__row' charge={ch} />
+      bodyClass="p-4 text-base font-medium --scroll max-h-[260px] space-y-4"
+      header={<HeaderBtn>Ver más detalles</HeaderBtn>}
+    >
+      {charges?.map((ch) => (
+        <ChargeCard
+          key={ch._id}
+          className="section__row"
+          projectId={projectId}
+          charge={ch}
+        />
       ))}
     </Section>
   );
