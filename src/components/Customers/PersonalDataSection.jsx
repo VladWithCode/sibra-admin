@@ -13,7 +13,7 @@ function PersonalDataSection({ customer }) {
     <Section
       heading="Datos Personales"
       header={
-        <HeaderBtn onClick={() => setSeeMore((state) => !state)}>
+        <HeaderBtn onClick={() => setSeeMore(state => !state)}>
           {seeMore ? 'Ver menos' : 'Ver Más'}
         </HeaderBtn>
       }
@@ -34,19 +34,21 @@ function PersonalDataSection({ customer }) {
           value={customer.email || 'No especificado'}
         />
       </Row>
-      <Row>
-        <Detail
-          title="Domicilio"
-          value={
-            concatStrings(
-              address.street,
-              address.extNumber && `No. ${address.extNumber},`,
-              address.col,
-              address.zip && `C.P. ${address.zip}.`
-            ) || 'Sin definir'
-          }
-        />
-      </Row>
+      {address ? (
+        <Row>
+          <Detail
+            title="Domicilio"
+            value={
+              concatStrings(
+                address.street,
+                address.extNumber && `No. ${address.extNumber},`,
+                address.col,
+                address.zip && `C.P. ${address.zip}.`
+              ) || 'Sin definir'
+            }
+          />
+        </Row>
+      ) : null}
       <hr className="mb-3.5 last:mb-0" />
       {seeMore ? (
         <>
