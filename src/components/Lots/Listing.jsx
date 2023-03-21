@@ -14,15 +14,10 @@ function Listing({ projectId, projectName, view, lots, className }) {
 
   return (
     <Card
-      className={getClassname(
-        'max-h-screen col-span-2 space-y-4 --scroll',
-        className
-      )}
+      className={getClassname('max-h-screen space-y-4 --scroll', className)}
     >
-      {lots.map((lot) => (
-        <LotCard className="shadow-sm">
-          <p className="text-lg text-error">{lot.lotNumber}</p>
-        </LotCard>
+      {lots.map(lot => (
+        <LotCard className="shadow-md py-6" lot={lot} />
       ))}
     </Card>
   );
