@@ -13,7 +13,7 @@ function DataRow({ data, desc }) {
 
 function ProjectCard({ project }) {
   const navigate = useNavigate();
-  const setLink = useNavigation((state) => state.setLink);
+  const setLink = useNavigation(state => state.setLink);
   const {
     _id,
     name,
@@ -52,7 +52,7 @@ function ProjectCard({ project }) {
           {associationName}
         </span>
         <h4 className="text-xl font-semibold">{name}</h4>
-        <p className="text-sm">{description}</p>
+        <p className="text-sm font-medium">{description}</p>
       </div>
     </div>
   );
