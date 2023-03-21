@@ -19,9 +19,13 @@ function Projects() {
     <Screen>
       <ScreenHeader heading="Proyectos"></ScreenHeader>
       <ScreenBody className="auto-rows-[15rem] lg:grid-cols-3">
-        {data.projects.map((p) => (
-          <ProjectCard project={p} key={p._id} />
-        ))}
+        {data.projects && data.projects?.length !== 0 ? (
+          data.projects.map(p => <ProjectCard project={p} key={p._id} />)
+        ) : (
+          <p className="text-center text-3xl text-zinc-400 col-span-3 my-auto">
+            No se encontraron proyectos registrados
+          </p>
+        )}
       </ScreenBody>
       <ProjectMenu />
     </Screen>
