@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ListFilters from '../../components/Lots/ListFilters';
 import Listing from '../../components/Lots/Listing';
 import ErrorScreen from '../../components/Screen/ErrorScreen';
 import Screen from '../../components/Screen/Screen';
@@ -24,7 +25,7 @@ function Heading({ projectName, children }) {
 
 function LotListing() {
   const { pid } = useParams();
-  const setLink = useNavigation((state) => state.setLink);
+  const setLink = useNavigation(state => state.setLink);
   const [view, setView] = useState('detail'); // detail | slim
   const { data, isLoading, isError, error } = useGetLots({
     projectId: pid,
@@ -50,19 +51,21 @@ function LotListing() {
             <div className="flex col-span-2">
               <Button
                 onClick={() =>
-                  setView((state) => (state === 'detail' ? 'slim' : 'detail'))
+                  setView(state => (state === 'detail' ? 'slim' : 'detail'))
                 }
                 className="mr-auto ml-2 bg-info border-info text-white py-1 px-4 rounded-full hover:bg-white hover:text-info "
               >
-                Ver Detallado
+                {view === 'slim' ? 'Ver Detallado' : 'Ver Simple'}
               </Button>
             </div>
             <Listing
+              className="col-span-1"
               view={view}
               projectId={pid}
               projectName={data.projectName}
               lots={data.lots}
             />
+            <ListFilters />
           </>
         )}
       </ScreenBody>
