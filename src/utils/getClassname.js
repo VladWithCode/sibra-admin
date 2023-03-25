@@ -1,3 +1,3 @@
-export default function getClassname(...args) {
-  return args.filter(Boolean).join(' ');
-}
+const getClassname = (...args) => args.filter(cn => Boolean(cn)).join(' ');
+
+export default getClassname;
