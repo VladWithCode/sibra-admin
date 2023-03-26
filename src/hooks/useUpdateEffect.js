@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 export const useUpdateEffect = (cb, deps) => {
-  const firstRenderRef = useRef(true);
+    const firstRenderRef = useRef(true);
 
-  useEffect(() => {
-    if (firstRenderRef.current) {
-      firstRenderRef.current = false;
-      return;
-    }
+    useEffect(() => {
+        if (firstRenderRef.current) {
+            firstRenderRef.current = false;
+            return;
+        }
 
-    return cb();
-  }, [deps]);
+        return cb();
+    }, [deps]);
 };

@@ -17,31 +17,34 @@ import LoadingScreen from '../../components/Screen/LoadingScreen';
 import ScreenBody from '../../components/Screen/ScreenBody';
 
 function Project() {
-  const { pid } = useParams();
-  const resetLink = useNavigation((state) => state.resetLink);
-  const { isLoading, isError, error, data } = useGetProjectById(pid);
+    const { pid } = useParams();
+    const resetLink = useNavigation(state => state.resetLink);
+    const { isLoading, isError, error, data } = useGetProjectById(pid);
 
-  if (isError) return <ErrorScreen error={error} />;
+    if (isError) return <ErrorScreen error={error} />;
 
-  if (isLoading) return <LoadingScreen />;
+    if (isLoading) return <LoadingScreen />;
 
-  const { project } = data;
+    const { project } = data;
 
-  return (
-    <Screen>
-      <ScreenHeader
-        heading={<ProjectHeading heading={project.name} />}
-      ></ScreenHeader>
-      <ScreenBody>
-        <DetailsSection project={project} />
-        <LotsSection project={project} />
-        {false && <StatSection project={project} />}
-        <FileSection files={project.files} />
-        <ChargeSection projectId={project._id} charges={project.extraCharges} />
-      </ScreenBody>
-      <BackBtn to="/projects" onClick={() => resetLink('projectsLink')} />
-    </Screen>
-  );
+    return (
+        <Screen>
+            <ScreenHeader
+                heading={<ProjectHeading heading={project.name} />}
+            ></ScreenHeader>
+            <ScreenBody>
+                <DetailsSection project={project} />
+                <LotsSection project={project} />
+                {false && <StatSection project={project} />}
+                <FileSection files={project.files} />
+                <ChargeSection
+                    projectId={project._id}
+                    charges={project.extraCharges}
+                />
+            </ScreenBody>
+            <BackBtn to="/projects" onClick={() => resetLink('projectsLink')} />
+        </Screen>
+    );
 }
 
 export default Project;

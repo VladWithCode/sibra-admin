@@ -5,22 +5,25 @@ import LotCard from './LotCard';
 import SlimLotCard from './SlimLotCard';
 
 const cardTypes = {
-  detail: LotCard,
-  slim: SlimLotCard,
+    detail: LotCard,
+    slim: SlimLotCard,
 };
 
 function Listing({ projectId, projectName, view, lots, className }) {
-  const LotCard = cardTypes[view];
+    const LotCard = cardTypes[view];
 
-  return (
-    <Card
-      className={getClassname('max-h-screen space-y-4 --scroll', className)}
-    >
-      {lots.map(lot => (
-        <LotCard className="shadow-md py-6" lot={lot} />
-      ))}
-    </Card>
-  );
+    return (
+        <Card
+            className={getClassname(
+                'max-h-screen space-y-4 --scroll',
+                className
+            )}
+        >
+            {lots.map(lot => (
+                <LotCard className="shadow-md py-6" lot={lot} />
+            ))}
+        </Card>
+    );
 }
 
 export default Listing;

@@ -14,34 +14,42 @@ import { useGetCustomerById } from '../../services/customers/useCustomers';
 import Card from '../../components/UI/Card';
 
 function Customer({}) {
-  const { id } = useParams();
-  const resetLink = useNavigation((state) => state.resetLink);
-  const { isLoading, isError, error, data } = useGetCustomerById(id);
+    const { id } = useParams();
+    const resetLink = useNavigation(state => state.resetLink);
+    const { isLoading, isError, error, data } = useGetCustomerById(id);
 
-  if (isError) return <ErrorScreen error={error} />;
+    if (isError) return <ErrorScreen error={error} />;
 
-  return (
-    <Screen>
-      <ScreenHeader
-        className="justify-between"
-        heading={
-          data?.customer.fullName ? data?.customer.fullName : 'Cargando...'
-        }
-      ></ScreenHeader>
-      <ScreenBody className="auto-rows-max text-base font-medium">
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <>
-            <PersonalDataSection customer={data.customer} />
-            <RecordListingSection records={data.customer.records} />
-            <FileSection files={data.customer.files} />
-          </>
-        )}
-      </ScreenBody>
-      <BackBtn to="/customers" onClick={() => resetLink('customersLink')} />
-    </Screen>
-  );
+    return (
+        <Screen>
+            <ScreenHeader
+                className="justify-between"
+                heading={
+                    data?.customer.fullName
+                        ? data?.customer.fullName
+                        : 'Cargando...'
+                }
+            ></ScreenHeader>
+            <ScreenBody className="auto-rows-max text-base font-medium">
+                {isLoading ? (
+                    <Spinner />
+                ) : (
+                    <>
+                        <PersonalDataSection customer={data.customer} />
+                        <RecordListingSection records={data.customer.records} />
+                        <FileSection
+                            customerId={data.customer._id}
+                            files={data.customer.files}
+                        />
+                    </>
+                )}
+            </ScreenBody>
+            <BackBtn
+                to="/customers"
+                onClick={() => resetLink('customersLink')}
+            />
+        </Screen>
+    );
 }
 
 export default Customer;

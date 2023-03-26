@@ -11,38 +11,42 @@ import Projects from '../screens/Projects/Projects';
 import Templates from '../screens/Templates/Templates';
 
 function MainRouter() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/project/:pid">
-            <Route index element={<Project />} />
-            <Route path="lots" element={<LotListing />} />
-            <Route path="charge/:cid/edit" element={<>hello world</>}></Route>
-          </Route>
-          <Route path="/customers">
-            <Route index element={<Customers />}></Route>
-            <Route path=":id" element={<Customer />}></Route>
-          </Route>
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/templates" element={<Templates />} />
-          <Route
-            path="*"
-            element={
-              <ErrorScreen
-                error={{
-                  title: 'No encontrado',
-                  message: 'La pagina que estas buscando no existe. :(',
-                }}
-              />
-            }
-          />
-        </Route>
-      </Routes>
-    </HashRouter>
-  );
+    return (
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<App />}>
+                    <Route index element={<Home />} />
+                    <Route path="/projects" element={<Projects />}></Route>
+                    <Route path="/project/:pid">
+                        <Route index element={<Project />} />
+                        <Route path="lots" element={<LotListing />} />
+                        <Route
+                            path="charge/:cid/edit"
+                            element={<>hello world</>}
+                        ></Route>
+                    </Route>
+                    <Route path="/customers">
+                        <Route index element={<Customers />}></Route>
+                        <Route path=":id" element={<Customer />}></Route>
+                    </Route>
+                    <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/templates" element={<Templates />} />
+                    <Route
+                        path="*"
+                        element={
+                            <ErrorScreen
+                                error={{
+                                    title: 'No encontrado',
+                                    message:
+                                        'La pagina que estas buscando no existe. :(',
+                                }}
+                            />
+                        }
+                    />
+                </Route>
+            </Routes>
+        </HashRouter>
+    );
 }
 
 export default MainRouter;

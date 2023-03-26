@@ -15,66 +15,74 @@ import { useGetLots } from '../../services/lots/useLotService';
 import { useGetProjectById } from '../../services/projects/useProjectQueries';
 
 function Heading({ projectName, children }) {
-  return (
-    <>
-      <span className="-mt-4 text-base text-zinc-400 block">{projectName}</span>
-      {children}
-    </>
-  );
+    return (
+        <>
+            <span className="-mt-4 text-base text-zinc-400 block">
+                {projectName}
+            </span>
+            {children}
+        </>
+    );
 }
 
 function LotListing() {
-  const { pid } = useParams();
-  const setLink = useNavigation(state => state.setLink);
-  const [view, setView] = useState('detail'); // detail | slim
-  const { data, isLoading, isError, error } = useGetLots({
-    projectId: pid,
-    filters: { isListing: true },
-  });
+    const { pid } = useParams();
+    const setLink = useNavigation(state => state.setLink);
+    const [view, setView] = useState('detail'); // detail | slim
+    const { data, isLoading, isError, error } = useGetLots({
+        projectId: pid,
+        filters: { isListing: true },
+    });
 
-  if (isError) return <ErrorScreen error={error} />;
+    if (isError) return <ErrorScreen error={error} />;
 
-  return (
-    <Screen>
-      <ScreenHeader
-        heading={
-          <Heading projectName={data ? data.projectName : 'Cargando...'}>
-            Listado de Lotes
-          </Heading>
-        }
-      ></ScreenHeader>
-      <ScreenBody>
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <>
-            <div className="flex col-span-2">
-              <Button
-                onClick={() =>
-                  setView(state => (state === 'detail' ? 'slim' : 'detail'))
+    return (
+        <Screen>
+            <ScreenHeader
+                heading={
+                    <Heading
+                        projectName={data ? data.projectName : 'Cargando...'}
+                    >
+                        Listado de Lotes
+                    </Heading>
                 }
-                className="mr-auto ml-2 bg-info border-info text-white py-1 px-4 rounded-full hover:bg-white hover:text-info "
-              >
-                {view === 'slim' ? 'Ver Detallado' : 'Ver Simple'}
-              </Button>
-            </div>
-            <Listing
-              className="col-span-1"
-              view={view}
-              projectId={pid}
-              projectName={data.projectName}
-              lots={data.lots}
+            ></ScreenHeader>
+            <ScreenBody>
+                {isLoading ? (
+                    <Spinner />
+                ) : (
+                    <>
+                        <div className="flex col-span-2">
+                            <Button
+                                onClick={() =>
+                                    setView(state =>
+                                        state === 'detail' ? 'slim' : 'detail'
+                                    )
+                                }
+                                className="mr-auto ml-2 bg-info border-info text-white py-1 px-4 rounded-full hover:bg-white hover:text-info "
+                            >
+                                {view === 'slim'
+                                    ? 'Ver Detallado'
+                                    : 'Ver Simple'}
+                            </Button>
+                        </div>
+                        <Listing
+                            className="col-span-1"
+                            view={view}
+                            projectId={pid}
+                            projectName={data.projectName}
+                            lots={data.lots}
+                        />
+                        <ListFilters />
+                    </>
+                )}
+            </ScreenBody>
+            <BackBtn
+                to={`/project/${pid}`}
+                onClick={() => setLink('projectsLink', `/project/${pid}`)}
             />
-            <ListFilters />
-          </>
-        )}
-      </ScreenBody>
-      <BackBtn
-        to={`/project/${pid}`}
-        onClick={() => setLink('projectsLink', `/project/${pid}`)}
-      />
-    </Screen>
-  );
+        </Screen>
+    );
 }
 
 export default LotListing;

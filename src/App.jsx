@@ -4,12 +4,12 @@ import Sidebar from './components/Layout/Sidebar';
 import Toast from './components/Toast/Toast';
 
 export const App = () => {
-  return (
-    <>
-      <Sidebar />
-      <Outlet />
+    return (
+        <>
+            <Sidebar />
+            <Outlet />
 
-      <Toast />
-    </>
-  );
+            <Toast />
+        </>
+    );
 };
