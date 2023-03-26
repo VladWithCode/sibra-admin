@@ -15,8 +15,7 @@ function BackBtn({ to, onClick }) {
         <FloatingBtn
             className="bg-error border-2 border-error rounded-full btn--back p-0 left-16 bottom-6 shadow shadow-zinc-200 -rotate-180 text-white hover:bg-white hover:text-error "
             style={{ position: 'fixed' }}
-            onClick={_onClick}
-        >
+            onClick={_onClick}>
             <SVG className="w-10 h-10 fill-current" id="angle" />
         </FloatingBtn>
     );

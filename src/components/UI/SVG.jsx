@@ -9,8 +9,7 @@ function SVG({ id, className, href, style, ...props }) {
                 className || 'w-8 h-8 fill-current'
             )}
             style={style}
-            {...props}
-        >
+            {...props}>
             <use href={href || `./assets/svg/sprites.svg#${id}`}></use>
         </svg>
     );

@@ -50,16 +50,14 @@ function FileBtn({ children, path, className, onClick, ...props }) {
                     className
                 )}
                 onClick={_onClick}
-                onContextMenu={onSecondaryClick}
-            >
+                onContextMenu={onSecondaryClick}>
                 {children}
             </Button>
             <div
                 className={getClassname(
                     'absolute top-0 left-0 right-0 bottom-0 pointer-events-none'
                 )}
-                onClick={() => setShowContextMenu(false)}
-            >
+                onClick={() => setShowContextMenu(false)}>
                 {showContextMenu && (
                     <ContextMenu cursorX={cursorX} cursorY={cursorY} />
                 )}
@@ -74,7 +72,6 @@ function ContextMenu({ cursorX, cursorY }) {
     return (
         <div
             className="fixed w-32 py-2 bg-zinc-200 shadow-md shadow-zinc-300"
-            style={{ left: `${cursorX}px`, top: `${cursorY}px` }}
-        ></div>
+            style={{ left: `${cursorX}px`, top: `${cursorY}px` }}></div>
     );
 }

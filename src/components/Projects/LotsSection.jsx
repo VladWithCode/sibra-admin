@@ -18,12 +18,10 @@ function LotsSection({ project }) {
                 <Link
                     className="text-base py-.5 px-2 shadow-hard shadow-zinc-400 bg-info border-2 border-info text-white hover:bg-white hover:text-info ml-auto mr-2 rounded-full"
                     to={`/project/${project._id}/lots`}
-                    onClick={() => setLink(`/project/${project._id}/lots`)}
-                >
+                    onClick={() => setLink(`/project/${project._id}/lots`)}>
                     Ver todos
                 </Link>
-            }
-        >
+            }>
             <Row>
                 <Detail
                     className="text-zinc-600"

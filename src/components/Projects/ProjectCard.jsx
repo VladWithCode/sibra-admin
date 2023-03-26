@@ -34,8 +34,7 @@ function ProjectCard({ project }) {
     return (
         <div
             className="relative overflow-hidden cursor-pointer flex flex-col bg-white px-5 py-3 shadow-lg shadow-zinc-200 rounded-xl group"
-            onClick={handleCardClick}
-        >
+            onClick={handleCardClick}>
             <span className="absolute top-0 -left-60 z-0 w-60 h-28 bg-info rounded-br-xl transition-[left] duration-300 group-hover:left-0"></span>
             <div className="w-full flex px-4 justify-between z-10">
                 <div className="left fs-4 text-cap text-white">

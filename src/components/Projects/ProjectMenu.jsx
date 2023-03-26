@@ -8,8 +8,7 @@ function ProjectMenu() {
         <FloatingMenu>
             <Action
                 className="p-2 shadow-md shadow-zinc-300 rounded-full hover:shadow-lg bg-white"
-                tooltip="Editar proyecto"
-            >
+                tooltip="Editar proyecto">
                 <SVG
                     href="./assets/svg/pencil.svg#pencil"
                     className="h-7 w-7 fill-info"
@@ -17,8 +16,7 @@ function ProjectMenu() {
             </Action>
             <Action
                 className="p-2 shadow-md shadow-zinc-300 rounded-full hover:shadow-lg bg-white"
-                tooltip="Generar Lotes"
-            >
+                tooltip="Generar Lotes">
                 <SVG
                     href="./assets/svg/land.svg#land"
                     className="h-7 w-7 fill-info"

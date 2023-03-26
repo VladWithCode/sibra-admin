@@ -10,8 +10,7 @@ function FileSection({ files }) {
             heading="Archivos"
             header={<HeaderBtn>Añadir</HeaderBtn>}
             useCard={true}
-            cardShadow={true}
-        >
+            cardShadow={true}>
             <Row className="gap-x-4">
                 {files.length === 0 ? (
                     <p className="text-2xl text-zinc-300 text-center font-semibold w-full py-4">

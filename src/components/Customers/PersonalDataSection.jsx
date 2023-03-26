@@ -19,8 +19,7 @@ function PersonalDataSection({ customer }) {
             }
             useCard={true}
             cardShadow={true}
-            bodyClass="text-lg font-medium"
-        >
+            bodyClass="text-lg font-medium">
             <Row>
                 <Detail title="Nombre" value={customer.fullName} />
             </Row>

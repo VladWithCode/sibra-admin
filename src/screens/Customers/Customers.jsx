@@ -41,14 +41,12 @@ function Customers() {
                                       'customersLink',
                                       `/customers/${customer._id}`
                                   )
-                              }
-                          >
+                              }>
                               <Section
                                   headless={true}
                                   useCard={true}
                                   bodyClass="flex flex-col py-6 h-[15rem] font-medium shadow-zinc-200 shadow-md hover:shadow-lg active:shadow-sm"
-                                  key={customer._id}
-                              >
+                                  key={customer._id}>
                                   <p className="text-xs text-zinc-300">
                                       {customer.rfc}
                                   </p>

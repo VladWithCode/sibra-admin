@@ -33,8 +33,7 @@ function RecordCard({ record }) {
                         recordState === 'Liquidado'
                             ? 'text-emerald-400'
                             : 'text-amber-400'
-                    )}
-                >
+                    )}>
                     {recordState}
                 </span>
             </p>

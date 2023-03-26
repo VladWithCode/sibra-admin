@@ -17,8 +17,7 @@ function NavLink({
                     isActive ? 'text-emerald-500' : 'text-gray-700',
                     pushBot && 'bot'
                 )
-            }
-        >
+            }>
             {children}
         </Link>
     );

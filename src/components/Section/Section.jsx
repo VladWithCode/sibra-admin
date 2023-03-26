@@ -16,8 +16,7 @@ function Section({ className, heading, header, children, ...props }) {
             ) : (
                 <div
                     className={getClassname('relative', props.bodyClass)}
-                    {...props}
-                >
+                    {...props}>
                     {children}
                 </div>
             )}

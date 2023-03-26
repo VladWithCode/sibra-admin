@@ -7,8 +7,7 @@ function StatSection({ project }) {
             heading="Estadisticas"
             bodyClass="fs-4 fw-500"
             useCard={true}
-            cardShadow={true}
-        >
+            cardShadow={true}>
             uwu
         </Section>
     );

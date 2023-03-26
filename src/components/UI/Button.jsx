@@ -11,8 +11,7 @@ function Button({ children, type = 'button', onClick, className, ...props }) {
                 props.replaceClassName
             )}
             onClick={onClick}
-            {...props}
-        >
+            {...props}>
             {children}
         </button>
     );

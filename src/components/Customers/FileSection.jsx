@@ -24,8 +24,7 @@ function FileSection({ files, customerId }) {
             }
             useCard={true}
             cardShadow={true}
-            style={{ position: 'initial' }}
-        >
+            style={{ position: 'initial' }}>
             <Row className={getClassname('gap-x-4', !isFormShown && 'mb-0')}>
                 {files.length === 0 ? (
                     <p className="text-2xl text-zinc-300 text-center font-semibold w-full py-4">
@@ -89,8 +88,7 @@ function UploadForm({ customerId, isShown }) {
                         },
                     }
                 );
-            }}
-        >
+            }}>
             <input
                 type="text"
                 className="rounded border-2 border-zinc-100 outline-info text-lg py-1 px-2 text-zinc-800 placeholder-zinc-400"
@@ -109,8 +107,7 @@ function UploadForm({ customerId, isShown }) {
             />
             <Button
                 type="submit"
-                className="px-4 py-2 bg-info border-info rounded text-white m-0"
-            >
+                className="px-4 py-2 bg-info border-info rounded text-white m-0">
                 Subir
             </Button>
         </form>

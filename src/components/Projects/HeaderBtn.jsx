@@ -10,8 +10,7 @@ function HeaderBtn({ children, className, onClick, ...props }) {
                 className
             )}
             onClick={onClick}
-            {...props}
-        >
+            {...props}>
             {children}
         </Button>
     );

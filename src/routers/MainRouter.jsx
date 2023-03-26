@@ -22,8 +22,7 @@ function MainRouter() {
                         <Route path="lots" element={<LotListing />} />
                         <Route
                             path="charge/:cid/edit"
-                            element={<>hello world</>}
-                        ></Route>
+                            element={<>hello world</>}></Route>
                     </Route>
                     <Route path="/customers">
                         <Route index element={<Customers />}></Route>

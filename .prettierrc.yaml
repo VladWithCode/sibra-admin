@@ -5,3 +5,4 @@ singleQuote: true
 jsxSingleQuote: false
 arrowParens: 'avoid'
 endOfLine: 'lf'
+bracketSameLine: true

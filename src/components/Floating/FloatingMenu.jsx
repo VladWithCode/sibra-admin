@@ -13,8 +13,7 @@ function FloatingMenu({ children, className, ...props }) {
                 className,
                 show || 'hide'
             )}
-            {...props}
-        >
+            {...props}>
             {/* toggler */}
             <div className="z-20">
                 <FloatingBtn
@@ -23,8 +22,7 @@ function FloatingMenu({ children, className, ...props }) {
                         'bg-success rounded-full text-white p-2 shadow-zinc-400',
                         show ? 'shadow-hard' : 'shadow-none'
                     )}
-                    tooltip={show ? 'Cerrar' : 'Menu'}
-                >
+                    tooltip={show ? 'Cerrar' : 'Menu'}>
                     <SVG
                         href="./assets/svg/plus.svg#plus"
                         className={getClassname(
@@ -39,8 +37,7 @@ function FloatingMenu({ children, className, ...props }) {
                 className={getClassname(
                     'flex flex-1 flex-col-reverse gap-y-4 py-4 max-h-[30vh] transition-[max-height] duration-500 origin-bottom mx-auto',
                     show ? '' : 'max-h-0 opacity-0 mb-0 duration-150'
-                )}
-            >
+                )}>
                 {children}
             </div>
         </div>

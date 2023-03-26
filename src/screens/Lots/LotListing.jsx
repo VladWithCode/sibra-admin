@@ -41,12 +41,10 @@ function LotListing() {
             <ScreenHeader
                 heading={
                     <Heading
-                        projectName={data ? data.projectName : 'Cargando...'}
-                    >
+                        projectName={data ? data.projectName : 'Cargando...'}>
                         Listado de Lotes
                     </Heading>
-                }
-            ></ScreenHeader>
+                }></ScreenHeader>
             <ScreenBody>
                 {isLoading ? (
                     <Spinner />
@@ -59,8 +57,7 @@ function LotListing() {
                                         state === 'detail' ? 'slim' : 'detail'
                                     )
                                 }
-                                className="mr-auto ml-2 bg-info border-info text-white py-1 px-4 rounded-full hover:bg-white hover:text-info "
-                            >
+                                className="mr-auto ml-2 bg-info border-info text-white py-1 px-4 rounded-full hover:bg-white hover:text-info ">
                                 {view === 'slim'
                                     ? 'Ver Detallado'
                                     : 'Ver Simple'}

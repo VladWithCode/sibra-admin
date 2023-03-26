@@ -28,8 +28,7 @@ function Customer({}) {
                     data?.customer.fullName
                         ? data?.customer.fullName
                         : 'Cargando...'
-                }
-            ></ScreenHeader>
+                }></ScreenHeader>
             <ScreenBody className="auto-rows-max text-base font-medium">
                 {isLoading ? (
                     <Spinner />

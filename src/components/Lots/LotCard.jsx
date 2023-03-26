@@ -23,8 +23,7 @@ function LotCard({ lot, className }) {
                     className={
                         'text-xl basis-1/4 text-right ' +
                         lotStatuses[lot.state][1]
-                    }
-                >
+                    }>
                     {lotStatuses[lot.state][0]}
                 </p>
             </div>

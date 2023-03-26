@@ -9,8 +9,7 @@ function Action({ children, className, ...props }) {
                 'shadow-md shadow-zinc-200 rounded-full',
                 className
             )}
-            {...props}
-        >
+            {...props}>
             {children}
         </FloatingBtn>
     );

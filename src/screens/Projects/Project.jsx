@@ -30,8 +30,9 @@ function Project() {
     return (
         <Screen>
             <ScreenHeader
-                heading={<ProjectHeading heading={project.name} />}
-            ></ScreenHeader>
+                heading={
+                    <ProjectHeading heading={project.name} />
+                }></ScreenHeader>
             <ScreenBody>
                 <DetailsSection project={project} />
                 <LotsSection project={project} />

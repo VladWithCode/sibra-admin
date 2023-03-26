@@ -17,8 +17,7 @@ function Listing({ projectId, projectName, view, lots, className }) {
             className={getClassname(
                 'max-h-screen space-y-4 --scroll',
                 className
-            )}
-        >
+            )}>
             {lots.map(lot => (
                 <LotCard className="shadow-md py-6" lot={lot} />
             ))}

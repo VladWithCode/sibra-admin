@@ -11,8 +11,7 @@ function DetailsSection({ project }) {
             useCard={true}
             cardShadow={true}
             bodyClass="text-base font-medium"
-            header={<HeaderBtn>Ver más</HeaderBtn>}
-        >
+            header={<HeaderBtn>Ver más</HeaderBtn>}>
             <Row>
                 <Detail title="Asociación" value={project.associationName} />
             </Row>
