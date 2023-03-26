@@ -1,41 +1,43 @@
 {
-  "name": "sibra-admin",
-  "author": {
-    "email": "vladwithcode@gmail.com",
-    "name": "Bladimir Rangel"
-  },
-  "description": "Programa para administracion de Sibra",
-  "private": true,
-  "version": "0.0.1",
-  "main": "public/electron.js",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "e:dev": "electron .",
-    "e:build": "electron-builder -c.extraMetadata.main=./build/electron.js",
-    "dist": "yarn build && yarn e:build"
-  },
-  "dependencies": {
-    "electron-is-dev": "^2.0.0",
-    "immer": "^9.0.16",
-    "just-clone": "^6.0.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-query": "^3.39.2",
-    "react-router-dom": "^6.3.0",
-    "zustand": "^4.1.5"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^1.3.0",
-    "autoprefixer": "^10.4.13",
-    "electron": "^19.0.5",
-    "electron-builder": "^23.1.0",
-    "postcss": "^8.4.20",
-    "sass": "^1.52.3",
-    "tailwindcss": "^3.2.4",
-    "vite": "^2.9.9"
-  }
+    "name": "sibra-admin",
+    "author": {
+        "email": "vladwithcode@gmail.com",
+        "name": "Bladimir Rangel"
+    },
+    "description": "Programa para administracion de Sibra",
+    "private": true,
+    "version": "0.0.1",
+    "main": "public/electron.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "e:dev": "electron .",
+        "e:build": "electron-builder -c.extraMetadata.main=./build/electron.js",
+        "dist": "yarn build && yarn e:build",
+        "prettify": "yarn prettier --write ./src"
+    },
+    "dependencies": {
+        "electron-is-dev": "^2.0.0",
+        "immer": "^9.0.16",
+        "just-clone": "^6.0.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-query": "^3.39.2",
+        "react-router-dom": "^6.3.0",
+        "zustand": "^4.1.5"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@vitejs/plugin-react": "^1.3.0",
+        "autoprefixer": "^10.4.13",
+        "electron": "^19.0.5",
+        "electron-builder": "^23.1.0",
+        "postcss": "^8.4.20",
+        "prettier": "^2.8.7",
+        "sass": "^1.52.3",
+        "tailwindcss": "^3.2.4",
+        "vite": "^2.9.9"
+    }
 }
