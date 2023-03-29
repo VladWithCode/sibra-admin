@@ -19,13 +19,12 @@ function FileSection({ files, customerId }) {
             heading="Archivos"
             header={
                 <HeaderBtn onClick={() => setIsFormShown(shown => !shown)}>
-                    Añadir
+                    {isFormShown ? 'Cerrar Añadir' : 'Añadir'}
                 </HeaderBtn>
             }
             useCard={true}
-            cardShadow={true}
-            style={{ position: 'initial' }}>
-            <Row className={getClassname('gap-x-4', !isFormShown && 'mb-0')}>
+            cardShadow={true}>
+            <Row className={'gap-x-4'}>
                 {files.length === 0 ? (
                     <p className="text-2xl text-zinc-300 text-center font-semibold w-full py-4">
                         Sin archivos
@@ -45,6 +44,10 @@ function FileSection({ files, customerId }) {
 }
 
 export default FileSection;
+
+function CtxMenuList({}) {
+    return <ul></ul>;
+}
 
 function UploadForm({ customerId, isShown }) {
     const { displayErrorToast, displayToast } = useToast(
@@ -107,7 +110,8 @@ function UploadForm({ customerId, isShown }) {
             />
             <Button
                 type="submit"
-                className="px-4 py-2 bg-info border-info rounded text-white m-0">
+                className="px-4 py-2 bg-info border-info rounded text-white"
+                style={{ margin: '0 ' }}>
                 Subir
             </Button>
         </form>
