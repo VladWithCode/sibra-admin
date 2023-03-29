@@ -3,101 +3,104 @@ const path = require('path');
 const url = require('node:url');
 
 function createWindow() {
-  const mainWindow = new BrowserWindow({
-    width: 1366,
-    height: 768,
-    minWidth: 900,
-    minHeight: 680,
-    autoHideMenuBar: true,
-    webPreferences: {
-      preload: path.join(__dirname, 'electron/preload.js'),
-    },
-  });
-
-  // In production, set the initial browser path to the local bundle generated
-  // by the Create React App build process.
-  // In development, set it to localhost to allow live/hot-reloading.
-  const appURL = app.isPackaged
-    ? url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true,
-      })
-    : 'http://localhost:3030';
-
-  mainWindow.loadURL(appURL);
-
-  if (!app.isPackaged) {
-    mainWindow.webContents.openDevTools({ mode: 'detach' });
-  }
-
-  mainWindow.webContents.session.webRequest.onBeforeSendHeaders(
-    (details, callback) => {
-      callback({
-        requestHeaders: {
-          ...details.requestHeaders,
-          Origin: 'http://localhost:3030',
+    const mainWindow = new BrowserWindow({
+        width: 1366,
+        height: 768,
+        minWidth: 900,
+        minHeight: 680,
+        autoHideMenuBar: true,
+        webPreferences: {
+            preload: path.join(__dirname, 'electron/preload.js'),
         },
-      });
-    }
-  );
+    });
 
-  mainWindow.webContents.session.webRequest.onHeadersReceived(
-    (details, callback) => {
-      if (details.url.includes('fonts.gstatic.com')) return callback(details);
+    // In production, set the initial browser path to the local bundle generated
+    // by the Create React App build process.
+    // In development, set it to localhost to allow live/hot-reloading.
+    const appURL = app.isPackaged
+        ? url.format({
+              pathname: path.join(__dirname, 'index.html'),
+              protocol: 'file:',
+              slashes: true,
+          })
+        : 'http://localhost:3000';
 
-      callback({
-        responseHeaders: {
-          ...details.responseHeaders,
-          'Access-Control-Allow-Origin': 'http://localhost:3030',
-          'Content-Security-Policy': ["localhost:3030 default-src 'none'"],
-        },
-      });
+    mainWindow.loadURL(appURL);
+
+    if (!app.isPackaged) {
+        mainWindow.webContents.openDevTools({ mode: 'detach' });
     }
-  );
+
+    mainWindow.webContents.session.webRequest.onBeforeSendHeaders(
+        (details, callback) => {
+            callback({
+                requestHeaders: {
+                    ...details.requestHeaders,
+                    Origin: 'http://localhost:3000',
+                },
+            });
+        }
+    );
+
+    mainwindow.webcontents.session.webrequest.onheadersreceived(
+        (details, callback) => {
+            if (details.url.includes('fonts.gstatic.com'))
+                return callback(details);
+
+            callback({
+                responseheaders: {
+                    ...details.responseheaders,
+                    'access-control-allow-origin': 'http://localhost:3000',
+                    'Content-Security-Policy': [
+                        "localhost:3000 default-src 'none'",
+                    ],
+                },
+            });
+        }
+    );
 }
 
 // Setup a local proxy to adjust the paths of requested files when loading
 // them from the local production bundle (e.g.: local fonts, etc...).
 function setupLocalFilesNormalizerProxy() {
-  protocol.registerHttpProtocol('file', (request, callback) => {
-    const url = request.url.substring(8);
-    callback({ path: path.normalize(`${app.getPath()}/${url}`) });
-  });
+    protocol.registerHttpProtocol('file', (request, callback) => {
+        const url = request.url.substring(8);
+        callback({ path: path.normalize(`${app.getPath()}/${url}`) });
+    });
 }
 
 // This method will be called when Electron has finished its initialization and
 // is ready to create the browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(async () => {
-  try {
-    await session.defaultSession.loadExtension(
-      path.normalize(
-        'C:\\Users\\Vladwb\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.25.0_0'
-      )
-    );
-  } catch (err) {
-    console.warn("Couldn't load dev tools");
-  }
-  createWindow();
-  setupLocalFilesNormalizerProxy();
-
-  app.on('activate', function () {
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
+    try {
+        await session.defaultSession.loadExtension(
+            path.normalize(
+                'C:\\Users\\Vladwb\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.25.0_0'
+            )
+        );
+    } catch (err) {
+        console.warn("Couldn't load dev tools");
     }
-  });
+    createWindow();
+    setupLocalFilesNormalizerProxy();
+
+    app.on('activate', function () {
+        // On macOS it's common to re-create a window in the app when the
+        // dock icon is clicked and there are no other windows open.
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    });
 });
 
 // Quit when all windows are closed, except on macOS.
 // There, it's common for applications and their menu bar to stay active until
 // the user quits  explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+    if (process.platform !== 'darwin') {
+        app.quit();
+    }
 });
 
 // If your app has no need to navigate or only needs to navigate to known pages,
@@ -105,15 +108,17 @@ app.on('window-all-closed', function () {
 // disallowing any other kinds of navigation.
 const allowedNavigationDestinations = 'https://my-electron-app.com';
 app.on('web-contents-created', (event, contents) => {
-  contents.on('will-navigate', (event, navigationUrl) => {
-    const parsedUrl = new URL(navigationUrl);
+    contents.on('will-navigate', (event, navigationUrl) => {
+        const parsedUrl = new URL(navigationUrl);
 
-    if (!allowedNavigationDestinations.includes(parsedUrl.origin)) {
-      event.preventDefault();
-    }
-  });
+        if (!allowedNavigationDestinations.includes(parsedUrl.origin)) {
+            event.preventDefault();
+        }
+    });
 });
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 require('./electron/listeners/file');
+
+require('./electron/db');
